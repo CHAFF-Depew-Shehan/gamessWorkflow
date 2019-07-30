@@ -1,0 +1,99 @@
+RIGHT HAND SIDE:
+['word', '1 IMAGINARY FREQUENCY', 'Hess_final/TS_Hess.log']
+Search Target: 1 IMAGINARY FREQUENCY is True
+6
+['fldr', 'IRC_forward', '']
+../cisDown/IRC_forward
+Search Target: IRC_forward is True
+11
+['word', 'ABNORMALLY', 'IRC_forward/TS_IRCf.log', 'nodeExists and grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCf.log")==""']
+nodeExists and grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCf.log")==""
+Search Target: ABNORMALLY is True
+16
+['word', ' NORMALLY', 'IRC_forward/TS_IRCf.log', 'nodeExists or grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCf.log")!=""']
+nodeExists or grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCf.log")!=""
+Search Target:  NORMALLY is False
+['fldr', 'IRC_forward', '', 'not Path(path).is_dir()']
+../cisDown/IRC_forward
+not Path(path).is_dir()
+Search Target: IRC_forward is False
+LEFT HAND SIDE:
+['word', '1 IMAGINARY FREQUENCY', 'Hess_final/TS_Hess.log']
+Search Target: 1 IMAGINARY FREQUENCY is True
+6
+['fldr', 'IRC_backward', '', 'not Path(path).is_dir()']
+../cisDown/IRC_backward
+not Path(path).is_dir()
+Search Target: IRC_backward is False
+['fldr', 'IRC_backward', '']
+../cisDown/IRC_backward
+Search Target: IRC_backward is True
+10
+['word', ' NORMALLY', 'IRC_backward/TS_IRCb.log', 'nodeExists or grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCb.log")!=""']
+nodeExists or grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCb.log")!=""
+Search Target:  NORMALLY is True
+13
+['fldr', 'Opt_LHS', '']
+../cisDown/Opt_LHS
+Search Target: Opt_LHS is False
+['fldr', 'Opt_LHS', '', 'not Path(path).is_dir()']
+../cisDown/Opt_LHS
+not Path(path).is_dir()
+Search Target: Opt_LHS is True
+20
+['word', 'ABNORMALLY', 'IRC_backward/TS_IRCb.log', 'nodeExists and grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCb.log")==""']
+nodeExists and grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCb.log")==""
+Search Target: ABNORMALLY is False
+[16, 20]
+FOUND "_N"!!!!!!!!!!!!!!!!!
+Pathnum: 
+1
+FOUND "_N"!!!!!!!!!!!!!!!!!
+Pathnum: 
+1
+FOUND "_N"!!!!!!!!!!!!!!!!!
+Pathnum: 
+1
+FOUND "_N"!!!!!!!!!!!!!!!!!
+Pathnum: 
+1
+FOUND "_N"!!!!!!!!!!!!!!!!!
+Pathnum: 
+1
+['$NODE=16', 'DESCRIPTION: "Node 16: IRC_forward ran abnormally and needs restart"', '', 'SECTION: CMD', 'mkdir IRC_forward/abnormal_1', 'mv IRC_forward/*.* IRC_forward/abnormal_1', '', 'SECTION: HEADER', 'PrevInpFile=IRC_forward/abnormal_1/TS_IRCf.inp', 'InpFile=IRC_forward/TS_IRCf.inp', 'Runtyp=IRC_forward', 'Parameters=None', 'Opttol=None', 'Nstep=None', 'Npoint=None', 'Maxit=200', '', 'SECTION: GEOM', 'PrevGeomFile=IRC_forward/abnormal_1/TS_IRCf.dat', 'Restart=True', '', 'SECTION: HESS', 'PrevHessFile=IRC_forward/abnormal_1/TS_IRCf.dat', '', 'SECTION: IRC', 'PrevIRCDatFile=IRC_forward/abnormal_1/TS_IRCf.dat', '']
+N VALUE IS:
+1
+DESCRIPTION: "Node 16: IRC_forward ran abnormally and needs restart"
+SECTION: CMD
+BeginSection: 4
+EndSection: 6
+SECTION: HEADER
+BeginSection: 8
+EndSection: 16
+()
+SECTION: GEOM
+BeginSection: 18
+EndSection: 20
+SECTION: HESS
+BeginSection: 22
+EndSection: 23
+SECTION: IRC
+BeginSection: 25
+EndSection: 26
+['$NODE=20', 'DESCRIPTION: "Node 20: Creating LHS Optimization"', '', 'SECTION: CMD', 'mkdir Opt_LHS', '', 'SECTION: HEADER', 'PrevInpFile=IRC_backward/TS_IRCb.inp', 'InpFile=Opt_LHS/TS_OptLHS.inp', 'Runtyp=OPTLHS', 'Parameters=None', 'Opttol=None', 'Nstep=None', 'Npoint=None', 'Maxit = None', '', 'SECTION: GEOM', 'PrevGeomFile=IRC_backward/TS_IRCb.dat', 'Restart=False', '', 'SECTION: VEC', 'PrevVecFile=IRC_backward/TS_IRCb.dat', 'Restart=False', '']
+N VALUE IS:
+None
+DESCRIPTION: "Node 20: Creating LHS Optimization"
+SECTION: CMD
+BeginSection: 4
+EndSection: 5
+SECTION: HEADER
+BeginSection: 7
+EndSection: 15
+()
+SECTION: GEOM
+BeginSection: 17
+EndSection: 19
+SECTION: VEC
+BeginSection: 21
+EndSection: 23

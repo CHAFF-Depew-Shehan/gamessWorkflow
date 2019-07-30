@@ -1,0 +1,2331 @@
+---------- Begin SLURM Prolog ----------
+Job ID:        4096978
+Username:      ddepew
+Accountname:   lc_ddd2
+Name:          Workflow_R47_parallel
+Partition:     scavenge
+Nodelist:      hpc[3002-3005]
+TasksPerNode:  16(x4)
+CPUsPerTask:   Default[1]
+TMPDIR:        /tmp/4096978.scavenge
+SCRATCHDIR:    /staging/scratch/4096978
+Cluster:       uschpc
+HSDA Account:  false
+---------- 2019-07-29 12:12:48 ---------
+Starting 4096978 Mon Jul 29 12:12:48 PDT 2019
+Initiated on hpc3002
+
+Running on 4 nodes: 
+hpc[3002-3005]
+Using 64 compute processes with 16 compute processes per node
+Current semaphores:
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+After semaphore removal:
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: Job 4096978 step creation temporarily disabled, retrying
+srun: Step created for job 4096978
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+srun: error: Could not find executable $GMS_PATH/rungms
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: Could not find executable $GMS_PATH/rungms
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+slurmstepd: error: execve(): $GMS_PATH/rungms: No such file or directory
+srun: error: hpc3002: tasks 0-15: Exited with exit code 2
+srun: error: hpc3005: tasks 48-63: Exited with exit code 2
+srun: error: hpc3004: tasks 32-47: Exited with exit code 2
+srun: error: hpc3003: tasks 16-31: Exited with exit code 2
+
+/auto/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_29
+0-31 $GMS_PATH/rungms ../R47_run2/Hess_LHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_LHS/TS_Hess.log
+32-63 $GMS_PATH/rungms ../R47_run2/Hess_RHS/TS_Hess.inp 00 32 16 > ../R47_run2/Hess_RHS/TS_Hess.log
+slurmstepd: error: *** JOB 4096978 ON hpc3002 CANCELLED AT 2019-07-29T12:13:30 ***

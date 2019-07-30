@@ -2,9 +2,7 @@
 SP_HF_count = {'SadPoint/':0,'Hess_final/':0}
 
 # Hard-coded (see README) adjacency lists (al) for decision tree
-al_init = {0:set([1, 2]), 1:set([3,4,5]), 2:set([]), 3:set([]), 4:set([7,8]), 5:set([]), 7:set([]),8:set([])}
-al_rhs = {6:set([11,12]),11:set([14,16]),12:set([]),14:set([17,18]),16:set([]),17:set([]),18:set([22,24]),22:set([25,26]),24:set([]),25:set([]),26:set([30,32]),30:set([]),32:set([]) } #forwards or rhs
-al_lhs = {6:set([9,10]),9:set([]),10:set([13,15]),13:set([19,20]),15:set([]),19:set([21,23]),20:set([]),21:set([27,28]),23:set([]),27:set([29,31]),28:set([]),29:set([]),31:set([]) } #backwards or lhs
+adjacency = {0:set([1, 2]), 1:set([3,4,5]), 2:set([]), 3:set([]), 4:set([6,7,8]), 5:set([]), 6:set([9,10,11,12]), 7:set([]),8:set([]),9:set([]),10:set([13,15]),11:set([14,16]),12:set([]),13:set([19,20]),14:set([17,18]),15:set([]),16:set([]),17:set([]),18:set([22,24]),19:set([21,23]),20:set([]),21:set([27,28]),22:set([25,26]),23:set([]),24:set([]),25:set([]),26:set([30,32]),27:set([29,31]),28:set([]),29:set([]),30:set([]),31:set([]),32:set([])}
 
 # Dictionary of search terms revelant for finding each status (i.e. {##: [['<SEARCH_TERM_1>','<PATH_TO_FILE_OR_FOLDER>'],['<SEARCH_TERM_N>','<PATH_TO_FILE_OR_FOLDER>']], ...})
 

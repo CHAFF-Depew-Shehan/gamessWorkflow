@@ -6,11 +6,12 @@ import sys
 #   -- due to modification in actions.py, allowed for newInputFile variable to
 #       be a list of strings; then each new input file is printed in a
 #       rungamessline for execution in case of multiple action nodes
+# CHANGELOG 07/29/19
+#   -- removed side from inputs and argument to findStatus()
 
-def main(rxn,side):
+def main(rxn):
     #print(rxn, file=sys.stderr)
-    #print(side, file=sys.stderr)
-    status = search.findStatus(rxn,side)
+    status = search.findStatus(rxn)
     #print('STATUS: ', file=sys.stderr)
     #print(status, file=sys.stderr)
     if 31 in status and 32 in status:
@@ -27,4 +28,4 @@ def main(rxn,side):
     return
 
 if __name__ == "__main__":
-    main(sys.argv[1], eval(sys.argv[2]))
+    main(sys.argv[1])

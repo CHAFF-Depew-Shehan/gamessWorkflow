@@ -24,7 +24,7 @@ def grep(pattern, file_path):
     #with io.open(file_path, "r", encoding="utf-8") as f:
     #    return re.search(pattern, mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ))
 
-def dfs(graph, start, rxnPath, visited=None,recent=None):
+def dfs(graph, start, rxnPath, visited=None):
 #   debug = open("debug.out","a+")
     if visited is None:
         visited = set()
@@ -33,12 +33,8 @@ def dfs(graph, start, rxnPath, visited=None,recent=None):
         visited.add(start)
 #       print(start, file=debug)
 
-#    if not graph[start]:
-#        #print('FOUND STATUS')
-#        recent.add(start)
-
         for next in graph[start] - visited:
-            dfs(graph, next, rxnPath, visited, recent)
+            dfs(graph, next, rxnPath, visited)
 #   print('Status: ' + str(visited), file=debug)
 #   debug.close()
     return visited
@@ -106,7 +102,7 @@ def evalNode(rxnPath,node):
 
 
 
-def findStatus(rxn, side=False):
+def findStatus(rxn):
     # This function finds the status of job 'rxn'
 
     ## Reactions main directory
@@ -116,46 +112,21 @@ def findStatus(rxn, side=False):
     #    rxnPath = rxn + '/'
 
     status = []
-    #status_rhs = None
-    #status_lhs = None
-    #status_init = None
 
 #   debug = open("debug.out","a+")
-    if side:
-        #print('RIGHT HAND SIDE:', file=debug)
-        rhs = dfs(variables.al_rhs,6,rxn)
-        #print(rhs, file=debug)
-
-        #print('LEFT HAND SIDE:', file=debug)
-        lhs = dfs(variables.al_lhs,6,rxn)
-        #print(lhs, file=debug)
-        for value in rhs:
-            if not variables.al_rhs[value]:
-                status.append(value)
-        for value in lhs:
-            if not variables.al_lhs[value]:
-                status.append(value)
-        #status = [status_lhs, status_rhs]
-
-        # If leaf nodes DNE, raise error
-        #if status_rhs == None or status_lhs==None:
-        #    raise ValueError("No Leaf Node Found")
-
-    else:
-        init = dfs(variables.al_init,0,rxn)
-        for value in init:
-            if not variables.al_init[value]:
-                status.append(value)
-        #status = [status_init]
-
-        ## If leaf nodes DNE, raise error
-        #if status_init == None:
-        #    raise ValueError("No Leaf Node Found")
+    paths = dfs(variables.adjacency,0,rxn)
+    for value in paths:
+        #print("value in paths: " + str(value), file=sys.stderr)
+        if not variables.adjacency[value]:
+            #print("appending status value: " + str(value), file=sys.stderr)
+            status.append(value)
 
 #   debug.close()
 
-    #if not status:
-    # exit code, no next steps
+    # If leaf nodes DNE, raise error
+    if status == []:
+        raise ValueError("No Leaf Node Found")
+
     return status
 #rxn = '../R4/'
 #status = findStatus(rxn,side=True)

@@ -1,0 +1,100 @@
+# GIT: Distributed Verson Control System
+git remote add origin https://github.com/CHAFF-Depew-Shehan/gamessWorkflow.git
+git push -u origin master
+
+echo "# gamessWorkflow" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/CHAFF-Depew-Shehan/gamessWorkflow.git
+git push -u origin master
+
+
+# Check the version
+echo "git --version"
+# Save global variables for personal user/email information
+echo "git config --global user.name 'shehan807'"
+echo "git config --global user.email 'smparmar@usc.edu'"
+# Check any global or local variables
+echo "git config --list "
+# Get any help 
+echo "git <verb> --help"
+
+
+# Initialize a Repo from Existing Code - create .git folder 
+echo "git init"
+# Before first commit
+echo "git status"
+# Ignore any personal preferences of files to be ignored 
+echo "touch .gitignore"
+echo "vim .gitignore"
+echo "Write names of the files in .gitignore"
+
+# THREE STATES
+# 1) Working Directory: untracked and modified files listed when git status is ran
+# 2) Staging Area: organize what we want to be committed; multiple commits can be made in small chunks; each commit can be very detailed
+# 3) Repository: saved and most up to date version
+
+# Add to the Staging Area
+# Add all files that have been changed
+echo "git add -A"
+# Add files that have been changed individually 
+echo "git add 'filename'"
+# Remove files from the staging area 
+echo "git reset 'filename'" 
+# Remove all files from the staging area
+echo "git reset"
+
+# Changes are made to the repository after the following
+echo "git commit -m 'DETAILED MESSAGE'"
+# See all past commits
+echo "git log"
+
+
+# Cloning a Remote Repo
+git clone <url> <where to clone>
+
+# Viewing information about the remote repository 
+git remote -v 
+git branch -a 
+
+# Commit and Push changes to Remote Repo
+git diff # show changes
+git status # what was modified 
+git add -A # add all changes 
+git commit -m "DESCRIPTION"
+
+git pull origin master # pull any changes since last time pulled from Repo
+git push origin master # changes get pushed, of course
+
+#COMMON WORKFLOW
+git branch branch-name
+git checkout branch-name
+git branch # what is the current branch being worked on 
+
+# start changes
+git status # should indicate something has been changed
+git add -A
+git commit -m 'branch changes'
+
+#push branch to remote repo
+git push -u origin branch-name # pushed to remote repo
+git branch -a 
+
+# merge to master 
+git checkout master 
+git pull origin master # make sure you're up to date 
+git branch --merged # shows what branches that have been merged thus far 
+git merge branch-name
+git push origin master 
+
+# delete branch 
+git branch --merged # double check merge worked 
+git branch -d branch-name
+git branch -a
+git push origin --delete branch-name
+
+
+
+
+

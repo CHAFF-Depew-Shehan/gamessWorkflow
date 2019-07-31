@@ -287,7 +287,65 @@ PrevIRCDatFile=IRC_forward/abnormal_N/TS_IRCf.dat
 $END
 ----------------------------------------------------------------------------------------
 $NODE=17
-DESCRIPTION: "Node 17: Creating RHS Optimization"
+DESCRIPTION: "Node 17: IRC_backward satisifed Opttol and skipping straight to Hess_LHS"
+
+SECTION: CMD
+mkdir Opt_LHS
+touch README
+echo 'Opttol was satisifed in IRC_backward, optimization run is being skipped!' >> README
+mkdir Hess_LHS
+
+SECTION: HEADER
+PrevInpFile=IRC_backward/TS_IRCb.inp
+InpFile=Hess_LHS/TS_Hess.inp
+Runtyp=HESSIAN
+Parameters=None
+Opttol=None
+Nstep=None
+Npoint=None
+Maxit=None
+
+SECTION: GEOM
+PrevGeomFile=IRC_backward/TS_IRCb.dat
+Restart=False
+
+SECTION: VEC
+PrevVecFile=IRC_backward/TS_IRCb.dat
+Restart=False
+
+$END
+----------------------------------------------------------------------------------------
+$NODE=18
+DESCRIPTION: "Node 18: IRC_forward satisifed Opttol and skipping straight to Hess_LHS"
+
+SECTION: CMD
+mkdir Opt_RHS
+touch README
+echo 'Opttol was satisifed in IRC_backward, optimization run is being skipped!' >> README
+mkdir Hess_RHS
+
+SECTION: HEADER
+PrevInpFile=IRC_forward/TS_IRCf.inp
+InpFile=Hess_RHS/TS_Hess.inp
+Runtyp=HESSIAN
+Parameters=None
+Opttol=None
+Nstep=None
+Npoint=None
+Maxit=None
+
+SECTION: GEOM
+PrevGeomFile=IRC_forward/TS_IRCf.dat
+Restart=False
+
+SECTION: VEC
+PrevVecFile=IRC_forward/TS_IRCf.dat
+Restart=False
+
+$END
+----------------------------------------------------------------------------------------
+$NODE=19
+DESCRIPTION: "Node 19: Creating RHS Optimization"
 
 SECTION: CMD
 mkdir Opt_RHS
@@ -312,8 +370,8 @@ Restart=False
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=20
-DESCRIPTION: "Node 20: Creating LHS Optimization"
+$NODE=22
+DESCRIPTION: "Node 22: Creating LHS Optimization"
 
 SECTION: CMD
 mkdir Opt_LHS
@@ -338,8 +396,8 @@ Restart=False
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=23
-DESCRIPTION: "Node 23: Opt_LHS ran unsuccessfully so restart (incomplete directory)"
+$NODE=25
+DESCRIPTION: "Node 25: Opt_LHS ran unsuccessfully so restart (incomplete directory)"
 
 SECTION: CMD
 mkdir Opt_LHS/incomplete_N
@@ -365,8 +423,8 @@ Restart=True
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=24
-DESCRIPTION: "Node 24: Opt_RHS ran unsuccessfully so restart (incomplete directory)"
+$NODE=26
+DESCRIPTION: "Node 26: Opt_RHS ran unsuccessfully so restart (incomplete directory)"
 
 SECTION: CMD
 mkdir Opt_RHS/incomplete_N
@@ -392,8 +450,8 @@ Restart=True
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=25
-DESCRIPTION: "Node 25: Creating Hess RHS "
+$NODE=27
+DESCRIPTION: "Node 27: Creating Hess RHS "
 
 SECTION: CMD
 mkdir Hess_RHS
@@ -418,8 +476,8 @@ Restart=False
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=28
-DESCRIPTION: "Node 28: Creating Hess LHS "
+$NODE=30
+DESCRIPTION: "Node 30: Creating Hess LHS "
 
 SECTION: CMD
 mkdir Hess_LHS
@@ -444,8 +502,8 @@ Restart=False
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=29
-DESCRIPTION: "Node 29: Restart Hess LHS"
+$NODE=31
+DESCRIPTION: "Node 31: Restart Hess LHS"
 
 SECTION: CMD
 mkdir Hess_LHS/abnormally_N
@@ -474,8 +532,8 @@ PrevVibFile=Hess_LHS/abnormally_1/TS_Hess.inp
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=30
-DESCRIPTION: "Node 30: Restart Hess RHS"
+$NODE=32
+DESCRIPTION: "Node 32: Restart Hess RHS"
 
 SECTION: CMD
 mkdir Hess_RHS/abnormally_N
@@ -504,7 +562,7 @@ PrevVibFile=Hess_RHS/abnormally_1/TS_Hess.inp
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=31
+$NODE=33
 DESCRIPTION: "Node 31: Hess LHS ran normally "
 
 SECTION: CMD
@@ -512,11 +570,72 @@ exit 0
 
 $END
 ----------------------------------------------------------------------------------------
-$NODE=32
+$NODE=34
 DESCRIPTION: "Node 32: Hess RHS ran normally "
 
 SECTION: CMD
 exit 0
 
 $END
+----------------------------------------------------------------------------------------
+$NODE=35
+DESCRIPTION: "Node 35: Hess LHS has Imaginary Freq, decr CONV"
+
+SECTION: CMD
+mkdir Hess_LHS/abnormally_N
+mv Hess_LHS/*.* Hess_LHS/abnormally_N
+
+SECTION: HEADER
+PrevInpFile=Hess_LHS/abnormally_1/TS_Hess.inp
+InpFile=Hess_LHS/TS_Hess.inp
+Runtyp=HESSIAN
+Parameters=None
+Opttol=None
+Nstep=None
+Npoint=None
+Maxit=200
+
+SECTION: GEOM
+PrevGeomFile=Hess_LHS/abnormally_1/TS_Hess.inp
+Restart=True
+
+SECTION: VEC
+PrevVecFile=Hess_LHS/abnormally_1/TS_Hess.inp
+Restart=True
+
+SECTION: VIB
+PrevVibFile=Hess_LHS/abnormally_1/TS_Hess.inp
+
+$END
+----------------------------------------------------------------------------------------
+$NODE=36
+DESCRIPTION: "Node 36: Hess RHS has Imaginary Freq, decr CONV"
+
+SECTION: CMD
+mkdir Hess_RHS/abnormally_N
+mv Hess_RHS/*.* Hess_RHS/abnormally_N
+
+SECTION: HEADER
+PrevInpFile=Hess_RHS/abnormally_1/TS_Hess.inp
+InpFile=Hess_RHS/TS_Hess.inp
+Runtyp=HESSIAN
+Parameters=None
+Opttol=None
+Nstep=None
+Npoint=None
+Maxit=200
+
+SECTION: GEOM
+PrevGeomFile=Hess_RHS/abnormally_1/TS_Hess.inp
+Restart=True
+
+SECTION: VEC
+PrevVecFile=Hess_RHS/abnormally_1/TS_Hess.inp
+Restart=True
+
+SECTION: VIB
+PrevVibFile=Hess_RHS/abnormally_1/TS_Hess.inp
+
+$END
+----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------

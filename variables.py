@@ -30,16 +30,16 @@ search = {0: ['fldr','SadPoint',''],
         14:['word',' NORMALLY','IRC_forward/TS_IRCf.log','nodeExists and (grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCf.log")=="")'],
         15:['word','ABNORMALLY','IRC_backward/TS_IRCb.log','nodeExists and (grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCb.log")=="")'],
         16:['word','ABNORMALLY','IRC_forward/TS_IRCf.log','nodeExists and (grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "TS_IRCf.log")=="")'],
-        17:['word','STOPPING BECAUSE GRADIENT IS BELOW OPTTOL','IRC_backward/TS_IRCb.log']
-        18:['word','STOPPING BECAUSE GRADIENT IS BELOW OPTTOL','IRC_forward/TS_IRCf.log']
+        17:['word','STOPPING BECAUSE GRADIENT IS BELOW OPTTOL','IRC_backward/TS_IRCb.log'],
+        18:['word','STOPPING BECAUSE GRADIENT IS BELOW OPTTOL','IRC_forward/TS_IRCf.log'],
         19:['fldr','Opt_RHS','','not Path(path).is_dir()'],
         20:['fldr','Opt_RHS',''],
         21:['fldr','Opt_LHS',''],
         22:['fldr','Opt_LHS','','not Path(path).is_dir()'],
-        23:['word','SUCCESSFUL','Opt_LHS/TS_OptLHS.dat','Path('/Opt_LHS/README').is_file()'],
-        24:['word','SUCCESSFUL','Opt_RHS/TS_OptRHS.dat','Path('/Opt_RHS/README').is_file()'],
-        25:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_LHS/TS_OptLHS.log','Path('/Opt_LHS/README').is_file()'],
-        26:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_RHS/TS_OptRHS.log','Path('/Opt_RHS/README').is_file()'],
+        23:['word','SUCCESSFUL','Opt_LHS/TS_OptLHS.dat','Path("/Opt_LHS/README").is_file()'],
+        24:['word','SUCCESSFUL','Opt_RHS/TS_OptRHS.dat','Path("/Opt_RHS/README").is_file()'],
+        25:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_LHS/TS_OptLHS.log','not Path("/Opt_LHS/README").is_file()'],
+        26:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_RHS/TS_OptRHS.log','not Path("/Opt_RHS/README").is_file()'],
         27:['fldr','Hess_RHS','','not Path(path).is_dir()'],
         28:['fldr','Hess_RHS',''],
         29:['fldr','Hess_LHS',''],
@@ -47,8 +47,8 @@ search = {0: ['fldr','SadPoint',''],
         31:['word','ABNORMALLY','Hess_LHS/TS_Hess.log'],
         32:['word','ABNORMALLY','Hess_RHS/TS_Hess.log'],
         33:['word','NORMALLY','Hess_LHS/TS_Hess.log','not "IMAGINARY" in line'],
-        34:['word','NORMALLY','Hess_RHS/TS_Hess.log','not "IMAGINARY" in line']
-        35:['word','IMAGINARY FREQUENCY','Hess_LHS/TS_Hess.log']
+        34:['word','NORMALLY','Hess_RHS/TS_Hess.log','not "IMAGINARY" in line'],
+        35:['word','IMAGINARY FREQUENCY','Hess_LHS/TS_Hess.log'],
         36:['word','IMAGINARY FREQUENCY','Hess_RHS/TS_Hess.log']
         }
 # Dictionary of actions necessary for creating respective input files for discovered status

@@ -291,8 +291,9 @@ DESCRIPTION: "Node 17: IRC_backward satisifed Opttol and skipping straight to He
 
 SECTION: CMD
 mkdir Opt_LHS
-touch README
-echo 'Opttol was satisifed in IRC_backward, optimization run is being skipped!' >> README
+touch Opt_LHS/README
+echo 'Opttol was satisifed in IRC_backward, optimization run is being skipped!' >> Opt_LHS/README
+echo 'SEE IRC BACKWARD: OPTIMIZATION WAS SUCCESSFUL' >> Opt_LHS/TS_OptLHS.dat
 mkdir Hess_LHS
 
 SECTION: HEADER
@@ -320,8 +321,9 @@ DESCRIPTION: "Node 18: IRC_forward satisifed Opttol and skipping straight to Hes
 
 SECTION: CMD
 mkdir Opt_RHS
-touch README
-echo 'Opttol was satisifed in IRC_backward, optimization run is being skipped!' >> README
+touch Opt_RHS/README
+echo 'Opttol was satisifed in IRC_backward, optimization run is being skipped!' >> Opt_RHS/README
+echo 'SEE IRC FORWARD: OPTIMIZATION WAS SUCCESSFUL' >> Opt_RHS/TS_OptRHS.dat
 mkdir Hess_RHS
 
 SECTION: HEADER

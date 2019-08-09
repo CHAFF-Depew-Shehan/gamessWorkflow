@@ -1,5 +1,6 @@
 import statusUpdateFunc as search
 import actions as act
+from hosts import getHosts
 import sys
 
 # CHANGELOG 07/23/19
@@ -15,16 +16,20 @@ def main(rxn):
     #print('STATUS: ', file=sys.stderr)
     #print(status, file=sys.stderr)
     if 31 in status and 32 in status:
-        isComplete = True
-        print('exit 0')
+        print('COMPLETED')
         return
-    else:
-        isComplete = False
+
     newInputFile = act.actions(rxn,'/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow/actions.txt',status)
 
-    for inpFile in newInputFile:
-        rungamessline = '$GMS_PATH/rungms ' + inpFile + ' 00 $NCPUS $PPN > ' + inpFile.replace('.inp','.log')
-        print(rungamessline)
+    numSubprocesses = len(newInputFile)
+    if numSubprocesses == 0:
+        raise ValueError("No input files were created!! Check results from completed runs")
+    else:
+        getHosts(len(newInputFile))
+
+    [print(inpFile.strip(".inp")) for inpFile in newInputFile]
+#       rungamessline = '$GMS_PATH/rungms ' + inpFile + ' 00 $NCPUS $PPN > ' + inpFile.replace('.inp','.log')
+#       print(rungamessline)
     return
 
 if __name__ == "__main__":

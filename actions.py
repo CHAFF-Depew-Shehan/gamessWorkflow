@@ -56,7 +56,7 @@ def replaceFileNumber(rxn, nodeInfo):
             splitEntry = entry.split('=')
             path = rxn + splitEntry[-1]
             path = path.replace('_N','*')
-            pathNum = len(glob.glob(path)) + 1
+            pathNum = len(glob.glob(path)) #+ 1
             #if not isCMDfinished:
             #    # CMDS still in process - find number to label for next folder
             #    pathNum = len(glob.glob(path)) + 1

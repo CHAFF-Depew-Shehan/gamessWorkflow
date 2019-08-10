@@ -56,6 +56,7 @@ def replaceFileNumber(rxn, nodeInfo):
             #print('FOUND "_N"!!!!!!!!!!!!!!!!!')
             splitEntry = entry.split('=')
             path = rxn + splitEntry[-1]
+            # Assume _N path is the last element of the CMD list
             if ' ' in path:
                 path = path.split()[-1]
             path = path.replace('_N','*')

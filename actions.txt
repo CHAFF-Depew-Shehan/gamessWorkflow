@@ -346,7 +346,7 @@ mkdir Opt_LHS/incomplete_N
 mv Opt_LHS/*.* Opt_LHS/incomplete_N
 
 SECTION: HEADER
-PrevInpFile=Opt_LHS/incomplete_0/TS_OptLHS.inp
+PrevInpFile=Opt_LHS/incomplete_1/TS_OptLHS.inp
 InpFile=Opt_LHS/TS_OptLHS.inp
 Runtyp=OPTLHS
 Parameters=None
@@ -373,7 +373,7 @@ mkdir Opt_RHS/incomplete_N
 mv Opt_RHS/*.* Opt_RHS/incomplete_N
 
 SECTION: HEADER
-PrevInpFile=Opt_RHS/incomplete_0/TS_OptRHS.inp
+PrevInpFile=Opt_RHS/incomplete_1/TS_OptRHS.inp
 InpFile=Opt_RHS/TS_OptRHS.inp
 Runtyp=OPTRHS
 Parameters=None

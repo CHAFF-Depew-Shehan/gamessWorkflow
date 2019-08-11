@@ -7,8 +7,3 @@
 	FileNotFoundError: [Errno 2] No such file or directory: './Opt_RHS/incomplete_2/TS_OptRHS.dat'
 	SIMILAR CASES: R8, R32
 	- something might be wrong with how "_N" is read 
-
-
-
-
-

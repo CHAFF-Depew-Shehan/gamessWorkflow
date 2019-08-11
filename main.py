@@ -20,7 +20,7 @@ def main(rxn):
         return
     else:
         isComplete = False
-    newInputFile = act.actions(rxn,'/home/rcf-proj2/ddd2/ddepew/gamess/testing/GAMESS_workflow_pkg_07_23/actions.txt',status)
+    newInputFile = act.actions(rxn,'/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow/actions.txt',status)
 
     for inpFile in newInputFile:
         rungamessline = '$GMS_PATH/rungms ' + inpFile + ' 00 $NCPUS $PPN > ' + inpFile.replace('.inp','.log')

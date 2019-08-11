@@ -1,0 +1,14 @@
+1. R56_2: Couldn't find correct $VEC group in file ./Opt_RHS/TS_OptRHS.dat
+	- this should be fixed by skipping OPT run whenever IRC satisfies OPTTOL
+2. R24_2: Hess_LHS has 1 Imaginary Frequency 
+	SIMILAR CASES: R24,R32_2
+	- this should be fixed by changing the CONV parameter in the SCF group 
+3. R35: mkdir: cannot create directory ~@~XOpt_RHS/incomplete_1~@~Y: File exists
+	FileNotFoundError: [Errno 2] No such file or directory: './Opt_RHS/incomplete_2/TS_OptRHS.dat'
+	SIMILAR CASES: R8, R32
+	- something might be wrong with how "_N" is read 
+
+
+
+
+

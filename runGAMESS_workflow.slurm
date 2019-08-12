@@ -4,7 +4,7 @@
 #SBATCH --mem-per-cpu=4GB
 #SBATCH --constraint=IB
 #SBATCH --time=99:59:59
-#SBATCH --job-name=R47_test
+#SBATCH --job-name=R##
 #SBATCH --account=lc_ddd2
 #SBATCH --partition=scavenge
 #SBATCH --export=NONE #Clears out the job environment

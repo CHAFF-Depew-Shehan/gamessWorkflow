@@ -9,12 +9,26 @@ import sys
 #       rungamessline for execution in case of multiple action nodes
 # CHANGELOG 07/29/19
 #   -- removed side from inputs and argument to findStatus()
+# CHANGELOG 08/08/19
+#   -- changed what is printed in case all workflow runs are finished; instead
+#       of an 'exit 0' command, the string 'COMPLETED' is printed and the code
+#       exits
+#   -- the getHosts() function was added as implemented in hosts.py, accepting
+#       the number of subprocesses which must be run in parallel, inferred
+#       from the length of the list returned by the "actions()" function
+#   -- incorporated error handling in case no input files are returned from
+#       actions() function, raising a ValueError
+#   -- changed the output of the main function to print the stripped input
+#       file names; note that these include relative paths but the file name
+#       does not have the ".inp" extension
 
 def main(rxn):
     #print(rxn, file=sys.stderr)
     status = search.findStatus(rxn)
     #print('STATUS: ', file=sys.stderr)
     #print(status, file=sys.stderr)
+    # NOTE: This must be kept current as new nodes are added and the "final 2"
+    # nodes change from 31 and 32
     if 31 in status and 32 in status:
         print('COMPLETED')
         return

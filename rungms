@@ -1,6 +1,9 @@
 #!/bin/tcsh
 #
-#  last update = 17 Aug 2016
+#  last update = 8 Aug 2019
+#  implemented for Worklow scheme within USC HPCC cluster
+#  modified from script included in GAMESS distribution, requiring
+#  an additional input from the command line (hostfile)
 #
 #  This is a C-shell script to execute GAMESS, by typing
 #       rungms JOB VERNO NCPUS >& JOB.log &

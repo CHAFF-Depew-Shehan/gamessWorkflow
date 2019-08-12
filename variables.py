@@ -2,7 +2,7 @@
 SP_HF_count = {'SadPoint/':0,'Hess_final/':0}
 
 # Hard-coded (see README) adjacency lists (al) for decision tree
-adjacency = {0:set([1, 2]), 1:set([3,4,5]), 2:set([]), 3:set([]), 4:set([6,7,8]), 5:set([]), 6:set([9,10,11,12]), 7:set([]),8:set([]),9:set([]),10:set([13,15,17]),11:set([14,16,18]),12:set([]),13:set([19,20]),14:set([21,22]),15:set([]),16:set([]),17:set([]),18:set([]),19:set([]),20:set([24,26]),21:set([23,25]),22:set([]),23:set([29,30]),24:set([27,28]),25:set([]),26:set([]),27:set([]),28:set([32,34,36]),29:set([31,33,35]),30:set([]),31:set([]),32:set([]),33:set([]),34:set([]),35:set([]),36:set([])}
+adjacency = {0:set([1, 2]), 1:set([3,4,5]), 2:set([]), 3:set([]), 4:set([6,7,8]), 5:set([]), 6:set([9,10,11,12]), 7:set([]),8:set([]),9:set([]),10:set([13,15,17]),11:set([14,16,18]),12:set([]),13:set([21,22]),14:set([19,20]),15:set([]),16:set([]),17:set([]),18:set([]),19:set([]),20:set([24,26]),21:set([23,25]),22:set([]),23:set([29,30]),24:set([27,28]),25:set([]),26:set([]),27:set([]),28:set([32,34,36]),29:set([31,33,35]),30:set([]),31:set([]),32:set([]),33:set([]),34:set([]),35:set([]),36:set([])}
 
 # Dictionary of search terms revelant for finding each status (i.e. {##: [['<SEARCH_TERM_1>','<PATH_TO_FILE_OR_FOLDER>'],['<SEARCH_TERM_N>','<PATH_TO_FILE_OR_FOLDER>']], ...})
 
@@ -12,6 +12,8 @@ adjacency = {0:set([1, 2]), 1:set([3,4,5]), 2:set([]), 3:set([]), 4:set([6,7,8])
 
 #THIS LINE WAS REMOVED: not len(os.listdir(path))#
 
+#Might be the fix for nodes 19 and 22
+#and (not Path(./Hess_RHS/).is_dir())
 
 search = {0: ['fldr','SadPoint',''],
         1:['word','SUCCESSFUL','SadPoint/TS_SadPoint.dat'],
@@ -35,7 +37,7 @@ search = {0: ['fldr','SadPoint',''],
         19:['fldr','Opt_RHS','','not Path(path).is_dir()'],
         20:['fldr','Opt_RHS',''],
         21:['fldr','Opt_LHS',''],
-        22:['fldr','Opt_LHS','','not Path(path).is_dir()'],
+        22:['fldr','Opt_LHS','','not Path(path).is_dir() '],
         23:['word','SUCCESSFUL','Opt_LHS/TS_OptLHS.dat','Path("/Opt_LHS/README").is_file()'],
         24:['word','SUCCESSFUL','Opt_RHS/TS_OptRHS.dat','Path("/Opt_RHS/README").is_file()'],
         25:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_LHS/TS_OptLHS.log','not Path("/Opt_LHS/README").is_file()'],

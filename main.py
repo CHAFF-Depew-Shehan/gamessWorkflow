@@ -14,7 +14,7 @@ def main(rxn):
     status = search.findStatus(rxn)
     #print('STATUS: ', file=sys.stderr)
     #print(status, file=sys.stderr)
-    if 31 in status and 32 in status:
+    if 33 in status and 34 in status:
         isComplete = True
         print('exit 0')
         return

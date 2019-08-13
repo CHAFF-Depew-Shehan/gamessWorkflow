@@ -102,10 +102,10 @@ DECISION TREE:
                                                   |                        |  
                                                   |                        |
                                                   |                        |
-                                                  | 		               |
+                                                  | 		           |
 ---------------------------------------------------------------------------------------
-                                                  |		   	               |
-                                                  V			               V
+                                                  |		           |
+                                                  V		           V
                                           Converged in main           Not Converged		
                                              directory               (EXIT CODE!)  
                                            (no subfolders)

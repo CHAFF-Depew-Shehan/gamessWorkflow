@@ -74,18 +74,15 @@ def dfs(graph, start, rxnPath, visited=None):
     return visited
 
 def evalNode(rxnPath,node):
-    # This function works closely with the 'search' dictionary in variables.py
-    search = variables.search[node]
-    searchType = search[0]
-    searchTarget = search[1]
-    searchFolder = search[2]
+    # This function works closely with the 'search' dictionary
+    searchType = search[node][0]
+    searchTarget = search[node][1]
+    searchFolder = search[node][2]
     if searchType is 'fldr':
         path = rxnPath+searchFolder+searchTarget
         try:
             matches = glob.glob(path)
             nodeExists = (len(matches)>=1)
-            if '*' in searchTarget:
-                variables.SP_HF_count[searchFolder] = len(matches)
         except:
             nodeExists = False
     elif searchType is 'word':
@@ -94,8 +91,8 @@ def evalNode(rxnPath,node):
         nodeExists = (len(line)>=1)
 
     # Any final conditions that can still change the status
-    if len(search) > 3:
-        for cond in search[3:]:
+    if len(search[node]) > 3:
+        for cond in search[node][3:]:
             try:
                 if eval(cond):
                     nodeExists = True
@@ -103,7 +100,7 @@ def evalNode(rxnPath,node):
                     nodeExists = False
             except:
                 print('WARNING: Exception was found for conditions: ' + cond, file=sys.stderr)
-                raise 
+                raise
     return nodeExists
 
 def findStatus(rxn):
@@ -117,9 +114,9 @@ def findStatus(rxn):
 
     status = []
 
-    paths = dfs(variables.adjacency,0,rxn)
+    paths = dfs(adjacency,0,rxn)
     for value in paths:
-        if not variables.adjacency[value]:
+        if not adjacency[value]:
             status.append(value)
 
     # If leaf nodes DNE, raise error

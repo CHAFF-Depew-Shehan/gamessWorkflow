@@ -23,13 +23,10 @@ import sys
 #       does not have the ".inp" extension
 
 def main(rxn):
-    #print(rxn, file=sys.stderr)
     status = search.findStatus(rxn)
-    #print('STATUS: ', file=sys.stderr)
-    #print(status, file=sys.stderr)
-    if 33 in status and 34 in status:
     # NOTE: This must be kept current as new nodes are added and the "final 2"
-    # nodes change from 31 and 32
+    # nodes change from 33 and 34
+    if 33 in status and 34 in status:
         print('COMPLETED')
         return
 
@@ -42,8 +39,7 @@ def main(rxn):
         getHosts(len(newInputFile))
 
     [print(inpFile.strip(".inp")) for inpFile in newInputFile]
-#       rungamessline = '$GMS_PATH/rungms ' + inpFile + ' 00 $NCPUS $PPN > ' + inpFile.replace('.inp','.log')
-#       print(rungamessline)
+    #rungamessline = '$GMS_PATH/rungms ' + inpFile + ' 00 $NCPUS $PPN > ' + inpFile.replace('.inp','.log')
     return
 
 if __name__ == "__main__":

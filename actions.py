@@ -36,7 +36,7 @@ def actions(rxn, actionTextFile, actionNodes):
                 line = atf.readline()
 
         nodeInfo, N = replaceFileNumber(rxn, nodeInfo)
-        print(nodeInfo)
+        #print(nodeInfo)
         nodeVal = evalSectionsIn(rxn,nodeInfo,N)
         if nodeVal:
             newInputFile.append(nodeVal)
@@ -56,7 +56,13 @@ def replaceFileNumber(rxn, nodeInfo):
             #print('FOUND "_N"!!!!!!!!!!!!!!!!!')
             splitEntry = entry.split('=')
             path = rxn + splitEntry[-1]
+            # Assume _N path is the last element of the CMD list
+            if ' ' in path:
+                path = path.split()[-1]
             path = path.replace('_N','*')
+            #print("PATH:" + path)
+            #print('Glob.glob() output:')
+            #print(glob.glob(path))
             pathNum = len(glob.glob(path)) + 1
             #if not isCMDfinished:
             #    # CMDS still in process - find number to label for next folder

@@ -1,11 +1,54 @@
 import io
 import mmap
 import glob
-import variables
 import re
 import os
 import sys
 from pathlib import Path
+
+# Hard-coded (see README) adjacency lists (al) for decision tree
+adjacency = {0:set([1, 2]), 1:set([3,4,5]), 2:set([]), 3:set([]), 4:set([6,7,8]), 5:set([]), 6:set([9,10,11,12]), 7:set([]),8:set([]),9:set([]),10:set([13,15,17]),11:set([14,16,18]),12:set([]),13:set([21,22]),14:set([19,20]),15:set([]),16:set([]),17:set([]),18:set([]),19:set([]),20:set([24,26]),21:set([23,25]),22:set([]),23:set([29,30]),24:set([27,28]),25:set([]),26:set([]),27:set([]),28:set([32,34,36]),29:set([31,33,35]),30:set([]),31:set([]),32:set([]),33:set([]),34:set([]),35:set([]),36:set([])}
+
+# Dictionary of search terms revelant for finding each status (i.e. {##: [['<SEARCH_TERM_1>','<PATH_TO_FILE_OR_FOLDER>'],['<SEARCH_TERM_N>','<PATH_TO_FILE_OR_FOLDER>']], ...})
+
+search = {0: ['fldr','SadPoint',''],
+        1:['word','SUCCESSFUL','SadPoint/TS_SadPoint.dat'],
+        2:['word','FAILURE TO LOCATE STATIONARY POINT', 'SadPoint/TS_SadPoint.log'],
+        3:['fldr','Hess_final','not Path(path).is_file()'],
+        4:['fldr','Hess_final',''],
+        5:['fldr','Hess_final', '', 'not Path(path).is_dir()'],
+        6:['word','1 IMAGINARY FREQUENCY','Hess_final/TS_Hess.log'],
+        7:['word','IMAGINARY FREQUENCY','Hess_final/TS_Hess.log','int(line.strip()[0])>=2'],
+        8:['word','ABNORMALLY','Hess_final/TS_Hess.log'],
+        9:['fldr','IRC_backward', '', 'not Path(path).is_dir()'],
+        10:['fldr','IRC_backward',''],
+        11:['fldr','IRC_forward',''],
+        12:['fldr','IRC_forward', '', 'not Path(path).is_dir()'],
+        13:['word',' NORMALLY','IRC_backward/TS_IRCb.log', 'nodeExists and (grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "IRC_backward/TS_IRCb.log")=="")'],
+        14:['word',' NORMALLY','IRC_forward/TS_IRCf.log','nodeExists and (grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "IRC_forward/TS_IRCf.log")=="")'],
+        15:['word','ABNORMALLY','IRC_backward/TS_IRCb.log','nodeExists and (grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "IRC_backward/TS_IRCb.log")=="")'],
+        16:['word','ABNORMALLY','IRC_forward/TS_IRCf.log','nodeExists and (grep("STOPPING BECAUSE GRADIENT IS BELOW OPTTOL", "IRC_forward/TS_IRCf.log")=="")'],
+        17:['word','STOPPING BECAUSE GRADIENT IS BELOW OPTTOL','IRC_backward/TS_IRCb.log'],
+        18:['word','STOPPING BECAUSE GRADIENT IS BELOW OPTTOL','IRC_forward/TS_IRCf.log'],
+        19:['fldr','Opt_RHS','','not Path(path).is_dir()'],
+        20:['fldr','Opt_RHS',''],
+        21:['fldr','Opt_LHS',''],
+        22:['fldr','Opt_LHS','','not Path(path).is_dir() '],
+        23:['word','SUCCESSFUL','Opt_LHS/TS_OptLHS.dat','Path("/Opt_LHS/README").is_file()'],
+        24:['word','SUCCESSFUL','Opt_RHS/TS_OptRHS.dat','Path("/Opt_RHS/README").is_file()'],
+        25:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_LHS/TS_OptLHS.log','not Path("/Opt_LHS/README").is_file()'],
+        26:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_RHS/TS_OptRHS.log','not Path("/Opt_RHS/README").is_file()'],
+        27:['fldr','Hess_RHS','','not Path(path).is_dir()'],
+        28:['fldr','Hess_RHS',''],
+        29:['fldr','Hess_LHS',''],
+        30:['fldr','Hess_LHS','','not Path(path).is_dir()'],
+        31:['word','ABNORMALLY','Hess_LHS/TS_Hess.log'],
+        32:['word','ABNORMALLY','Hess_RHS/TS_Hess.log'],
+        33:['word','NORMALLY','Hess_LHS/TS_Hess.log','not "IMAGINARY" in line'],
+        34:['word','NORMALLY','Hess_RHS/TS_Hess.log','not "IMAGINARY" in line'],
+        35:['word','IMAGINARY FREQUENCY','Hess_LHS/TS_Hess.log'],
+        36:['word','IMAGINARY FREQUENCY','Hess_RHS/TS_Hess.log']
+        }
 
 def grep(pattern, file_path):
     # Used to search for a specific string pattern in a given file
@@ -18,40 +61,26 @@ def grep(pattern, file_path):
                     break
     except FileNotFoundError:
         line = ''
-
     return line
 
-    #with io.open(file_path, "r", encoding="utf-8") as f:
-    #    return re.search(pattern, mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ))
 
 def dfs(graph, start, rxnPath, visited=None):
-#   debug = open("debug.out","a+")
     if visited is None:
         visited = set()
-#        recent = set()
     if evalNode(rxnPath,start):
         visited.add(start)
-#       print(start, file=debug)
 
         for next in graph[start] - visited:
             dfs(graph, next, rxnPath, visited)
-#   print('Status: ' + str(visited), file=debug)
-#   debug.close()
     return visited
 
 def evalNode(rxnPath,node):
     # This function works closely with the 'search' dictionary in variables.py
     search = variables.search[node]
-#   debug = open("debug.out","a+")
-#   print(search, file=debug)
     searchType = search[0]
     searchTarget = search[1]
     searchFolder = search[2]
-    #if '_N' in searchFolder:
-    #    variables.SP_HF_count[searchFolder] = len(matches)
     if searchType is 'fldr':
-#       print("Searching path (folder):", file=debug)
-#       print(rxnPath+searchFolder+searchTarget, file=debug)
         path = rxnPath+searchFolder+searchTarget
         try:
             matches = glob.glob(path)
@@ -62,49 +91,21 @@ def evalNode(rxnPath,node):
             nodeExists = False
     elif searchType is 'word':
         path = rxnPath+searchFolder
-#       print("Searching path (word):", file=debug)
-#       print(rxnPath+searchFolder, file=debug)
         line = grep(searchTarget,path)
         nodeExists = (len(line)>=1)
 
     # Any final conditions that can still change the status
     if len(search) > 3:
         for cond in search[3:]:
-#           print(cond, file=debug)
-
             try:
                 if eval(cond):
                     nodeExists = True
                 else:
                     nodeExists = False
             except:
-#               print('WARNING: Exception was found for conditions: ' + cond, file=debug)
-                nodeExists = False
-        print(cond)
-        print('Above condition is deemed:')
-        print(nodeExists)
-#   print('Search Target: ' + searchTarget + ' is ' + str(nodeExists), file=debug)
-#   debug.close()
-
-#    if '*' in path:
-#            variables.counts[path] = len(matches)
-#
-#    if len(search) > 3:
-#        searchCond = []
-#        for cond in search[3:-1]:
-#            searchCond.append(cond)
-#    else:
-#        searchCond = True
-#
-#    if search[0] is 'fldr':
-#        glob.glob(rxnPath + search[2] + search
-#
-#    elif search[0] is 'word':
+                print('WARNING: Exception was found for conditions: ' + cond, file=sys.stderr)
+                raise 
     return nodeExists
-
-
-
-
 
 def findStatus(rxn):
     # This function finds the status of job 'rxn'
@@ -117,91 +118,13 @@ def findStatus(rxn):
 
     status = []
 
-#   debug = open("debug.out","a+")
     paths = dfs(variables.adjacency,0,rxn)
     for value in paths:
-        #print("value in paths: " + str(value), file=sys.stderr)
         if not variables.adjacency[value]:
-            #print("appending status value: " + str(value), file=sys.stderr)
             status.append(value)
-    print('Nodes found:')
-    print(status)
-#   debug.close()
 
     # If leaf nodes DNE, raise error
     if status == []:
         raise ValueError("No Leaf Node Found")
 
     return status
-#rxn = '../R4/'
-#status = findStatus(rxn,side=True)
-
-
-    # "N" dictionary keeps track of number of similarly named folders within given node
-    #N_dict = {2: 0, 5:0, 6:0, 9:0, 10:0, 17:0}
-
-
-
-    # Recursively find using provided adjacency list
-
-
-
-
-
-
-
-    # Dictionary entries follow: {##: [['<SEARCH_TERM_1>','<PATH_TO_FILE_OR_FOLDER>'],['<SEARCH_TERM_N>','<PATH_TO_FILE_OR_FOLDER>']], ...}
-    #dictionarySearchTerms = { 1: ['SadPoint*','/'], 2: ['SUCCESSFUL','/SadPoint/TS_SadPoint.dat'], 3: []}
-
-
-
-    # DFS Search through all nodes for current input
-
-    # create 'code' for next input
-
-
-
-
-#with open('testInputHeader.inp','w') as newInputFile:
-#    getHeader('./R56/Hess_init/R56.inp',newInputFile,'OPT_LHS')
-
-
-
-
-
-
-
-######### Hess Input ##########
-######### SadPoint Input ##########
-######### IRC Input ##########
-
-######### EXAMPLES ##########
-#
-#with open('testInputSadPoint.inp','w') as newInputFile:
-#    dirPath = "/home/rcf-proj2/ddd2/ZhangThynellTS/R8/"
-#    runType = "SadPoint"  # Pulling data from a SadPoint .dat file
-#    restart = False       # Next run is not a restart
-#    getPrevGeom(dirPath+"SadPoint/TS_SadPoint.dat", newInputFile, runType, restart)
-#    getPrevVec(dirPath+"SadPoint/TS_SadPoint.dat", newInputFile, runType, restart)
-#
-#with open('testInputIRC.inp','w') as newInputFile:
-#    dirPath = "/home/rcf-proj2/ddd2/ZhangThynellTS/R8/"
-#    runType = "IRC"  # Pulling data from a IRC .dat file
-#    restart = True   # Next run is a restart
-#    # Note: the "TS_SadPoint.dat" name below was my mistake in naming the file when I ran it originally
-#    getPrevGeom(dirPath+"IRC_forward/TS_SadPoint.dat", newInputFile, runType, restart)
-#    getPrevVec(dirPath+"IRC_forward/TS_SadPoint.dat", newInputFile, runType, restart)
-#    getPrevHess(dirPath+"Hess_final/TS_Hess.dat", newInputFile)
-#    getPrevIRC(dirPath+"IRC_forward/TS_SadPoint.dat", newInputFile)
-
-
-#for i in list(range(0,31)):
-#    if i in [2,3]:
-#        continue
-#    print('Node: ' + str(i))
-#    print(evalNode('../R38/',i))
-
-
-
-
-

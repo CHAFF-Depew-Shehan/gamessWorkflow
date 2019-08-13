@@ -1,52 +1,49 @@
 This is the documentation for the following codes: runGAMESS_workflow.slurm, setupTSinputs.py
 
-
 SETUP:
 
-The setup is crucial for the success of this shell script. The general "workflow" to obtain a sufficient tranistion state involves the following general process:
+The setup is crucial for the success of this shell script. The general "workflow" to obtain a sufficient transition state involves the following general process and calculations:
 
-1. Calculation of an Initial Hessian 
-2. Calculation of a subsequent Saddle Point
-3. Calculation of a Final Hessian 
-4. Calculation of Intrinsic Reaction Coordinate 
-5. Calculation of reactant and product geometry optimations 
-6. Calculation of a final reactant and product Hessian 
+1. Initial Hessian 
+2. Saddle Point
+3. Final Hessian 
+4. Intrinsic Reaction Coordinate 
+5. Reactant and Product Geometry Optimations 
+6. Final Reactant and Product Hessian 
 
 These 6 steps involve sub-steps, depending on the results. This will be discussed later. In each reaction directory, only the following directories and subdirectories may exist:
 
-
 1. HESS
 	1a. Hess_init 
-		(i) timeout_N (where N is the number of folders)
+		(i) abnormal_N (where N is the number of folders)
 	1b. Hess_final
 		(i) highOpttol_N
-			-> timeout_N
+			-> abnormal_N
 	1c. Hess_LHS
-		(i) rerun_N
-			-> timeout_N
+		(i) abnormal_N
 	1d. Hess_RHS
-		(i) rerun_N
-			-> timeout_N
+		(i) abnormal_N
 2. SadPoint
 	2a. highOpttol_N
 3. IRC
 	3a. IRC_backward
-		(i) timeout 
+		(i) abnormal_N
 	3b. IRC_forward
-		(i) timeout 
+		(i) abnormal_N
 4. OPT
 	4a. Opt_LHS
-		(i) timeout_N
+		(i) incomplete_N
 	4b. Opt_RHS
-		(i) timeout_N
+		(i) incomplete_N
 5. misc
 	-> any folders form previous runs that need to be archived 
 
-*timeout folders are created whenever restart is required for the parent folder's run
+*abnormal folders are created whenever restart is required for the parent folder's run
 **each outer-most subfolder in the above tree may include: .inp, .log, .dat, .rst, .out
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-PSEUDOCODE:
+PSEUDOCODE: 
 
 Step 1) Check for a converged SadPoint
 	1a) No converged SadPoint in reaction directory
@@ -59,7 +56,7 @@ Step 1) Check for a converged SadPoint
 Step 2) Check for a completed Hess_final 
 	2a) Hessian did not complete properly
 		(i) Hessian ran 'ABNORMALLY'
-			-> create ./timeout directory and run restart
+			-> create ./abnormal_N directory and run restart
 	       (ii) Hessian has 2+ imaginary frequencies
 			-> create ./SadPoint/highOpttol_(N+1) and move any existing files to ./SadPoint/highOpttol_N and run at new parameters
 	2b) Hessian has ONE imaginary frequency
@@ -67,31 +64,32 @@ Step 2) Check for a completed Hess_final
 Step 3) Check for complete IRC
 	3a) IRC did not complete properly 
 		(i) IRC_backward ran 'ABNORMALLY'
-			-> create ./timeout folder and begin restart process
+			-> create ./abnormal_N folder and begin restart process
 	       (ii) IRC_forward ran 'ABNORMALLY'
-			-> create ./timeout folder and begin restart process
+			-> create ./abnormal_N folder and begin restart process
 	3b) IRC complete ' NORMALLY'
 		(i) Create Opt_LHS
 	       (ii) Create Opt_RHS
 Step 4) Check for complete OPT
 	4a) OPT did not complete properly 
 		(i) Opt_LHS ran 'ABNORMALLY'
-			-> create ./timeout folder and begin restart process
+			-> create ./abnormal_N folder and begin restart process
 	       (ii) Opt_RHS ran 'ABNORMALLY'
-			-> create ./timeout folder and begin restart process
+			-> create ./abnormal_N folder and begin restart process
 	4b) OPT completed ' SUCCESSFULLY'
 		(i) Create Hess_LHS
 	       (ii) Create Hess_RHS
 Step 5) Check for complete reactants and products Hessian 
 	5a) Hess did not complete properly 
 		(i) Hessian ran 'ABNORMALLY'
-			-> create ./timeout directory and run restart
+			-> create ./abnormal_N directory and run restart
                (ii) Hessian has 1+ imaginary frequencies
-			-> create ./rerun directory and update TS_Hess.inp with refined parameters
+			-> create ./abnormal_N directory and update TS_Hess.inp with refined parameters
 	5b) Hessian is POSITIVE DEFINITE
 		-> create summary.txt file via python 
 		-> report Hess_LHS, Hess_final, and Hess_RHS energy sections (both gibbs free energy and electronic energy)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DECISION TREE:
 
@@ -170,29 +168,6 @@ DECISION TREE:
 ----------------------31/32-----------------------33/34-------------------35/36--------
 
 
-
-
-
-
-
-
-
-
-
-* nodes 1 and 3 (and all subsequent nodes) merge into nodes 4 and 5
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
- *** We are changing conditions for 6 (check if top level has inp file or   
-	not) and 11 (2 + imaginary freq in top level Hess final )
-	*** node 8, hess final AND input file in folder must exists 
-*** create a node 9 and 9.5, one for if Hess final folder needs to be created 
-and one for if Hess_final/TS_Hess.inp needs to be created                     
-*** at node 11, save number of highOpttol (no need for global variable)
-
 INPUT FILE NAMING CONVENTION:
 1. TS_Hess.inp
 2. TS_SadPoint.inp
@@ -203,9 +178,19 @@ INPUT FILE NAMING CONVENTION:
 
 CODE ARCHITECTURE:
 
-The main program is ran through the shell executable 'runGAMESS_workflow.slurm' in the command line: ./runGAMESS_workflow.slurm This slurm script runs a 'runGAMESS_workflow.py' python script that serves as the main script to receive any inputs from the slurm script necessary to utilize the python functions. 
+The main program is ran through the shell executable 'runGAMESS_workflow.slurm' in the command line: sbatch runGAMESS_workflow.slurm. This slurm script runs a 'main.py' python script that serves as the main script to receive any inputs from the slurm script necessary to utilize the python functions. 
 
--> runGAMESS_workflow.slurm: "./runGAMESS_workflow.slurm" in command line
+
+main.py 
+	-> statusUpdateFunc
+		-> variables 
+	-> actions
+		-> setupTSinputs
+		
+	-> hosts -> getHosts
+
+
+-> runGAMESS_workflow.slurm: "sbatch runGAMESS_workflow.slurm" in command line
 	-> runGAMESS_workflow.py: "python3 runGAMESS_workflow.py -Input1 -Input2"
 		-> createInputFile.py: "import createInputFile"
 			-> createInpFileFunc.py: "import createInpFileFunc as create"

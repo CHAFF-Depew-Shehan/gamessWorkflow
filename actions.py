@@ -36,6 +36,7 @@ def actions(rxn, actionTextFile, actionNodes):
                 line = atf.readline()
 
         nodeInfo, N = replaceFileNumber(rxn, nodeInfo)
+        print(nodeInfo)
         nodeVal = evalSectionsIn(rxn,nodeInfo,N)
         if nodeVal:
             newInputFile.append(nodeVal)

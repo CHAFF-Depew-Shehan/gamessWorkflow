@@ -27,9 +27,9 @@ def main(rxn):
     status = search.findStatus(rxn)
     #print('STATUS: ', file=sys.stderr)
     #print(status, file=sys.stderr)
+    if 33 in status and 34 in status:
     # NOTE: This must be kept current as new nodes are added and the "final 2"
     # nodes change from 31 and 32
-    if 31 in status and 32 in status:
         print('COMPLETED')
         return
 

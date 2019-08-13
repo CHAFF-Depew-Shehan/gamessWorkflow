@@ -51,7 +51,12 @@ done
 wait
 done
 
-ret=$?
+if [ ! -s workflow.err ]; then
+    rm workflow.err
+    ret=$?
+else
+    ret=1
+fi
 
 if [ -n "$(find $SCRATCHDIR -type f 2>/dev/null)" ]; then
     cp -r -v $SCRATCHDIR/* $SLURM_SUBMIT_DIR  # Copy all the output and temp files

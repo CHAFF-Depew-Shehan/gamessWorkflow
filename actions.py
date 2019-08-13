@@ -25,7 +25,6 @@ def actions(rxn, actionTextFile, actionNodes):
     # Read actions.txt for specified node and return all the necessary inputs for the createInputFile.py functions
     newInputFile = []
     for node in actionNodes:
-        #print('NODE: ' + str(node))
         nodeInfo = []
         with open(actionTextFile, "r") as atf:
             line = atf.readline()
@@ -36,63 +35,39 @@ def actions(rxn, actionTextFile, actionNodes):
                 line = atf.readline()
 
         nodeInfo, N = replaceFileNumber(rxn, nodeInfo)
-        #print(nodeInfo)
         nodeVal = evalSectionsIn(rxn,nodeInfo,N)
         if nodeVal:
             newInputFile.append(nodeVal)
 
-    return newInputFile #,line
+    return newInputFile 
 
 def replaceFileNumber(rxn, nodeInfo):
     pathNum = None
-    #isCMDfinished = False
     for i, entry in enumerate(nodeInfo):
         # Because cmds require _N to be the next number and inputs require the previously created number of that file, check if the cmds are complete (the header always follows the cmd sections)
-        #if "HEADER" in entry:
-        #    isCMDfinished = True
-
         if '_N' in entry:
-
-            #print('FOUND "_N"!!!!!!!!!!!!!!!!!')
             splitEntry = entry.split('=')
             path = rxn + splitEntry[-1]
+            
             # Assume _N path is the last element of the CMD list
             if ' ' in path:
                 path = path.split()[-1]
             path = path.replace('_N','*')
-            #print("PATH:" + path)
-            #print('Glob.glob() output:')
-            #print(glob.glob(path))
             pathNum = len(glob.glob(path)) + 1
-            #if not isCMDfinished:
-            #    # CMDS still in process - find number to label for next folder
-            #    pathNum = len(glob.glob(path)) + 1
-            #elif isCMDfinished:
-            #    # CMDS finished - find most recent folder for previous data
-            #    pathNum = len(glob.glob(path)) + 1
-
-            #print('Pathnum: ')
-            #print(pathNum)
             nodeInfo[i] = nodeInfo[i].replace('_N','_'+str(pathNum))
 
     return nodeInfo, pathNum
 
 def evalSectionsIn(rxn, nodeInfo, N):
-    #print('N VALUE IS:')
-    #print(N)
     inpFile = None
     for i, info in enumerate(nodeInfo):
         if 'DESCRIPTION' in info:
             description = info
-            #print(description)
         elif 'SECTION' in info:
             count = 1 + i
             section = info
-            #print(section, file=sys.stderr)
             beginSection = nodeInfo.index(section) + 1
-            #print('BeginSection: ' + str(beginSection), file=sys.stderr)
             endSection = nodeInfo[beginSection:].index('') + beginSection
-            #print('EndSection: ' + str(endSection), file=sys.stderr)
             variables = nodeInfo[beginSection:endSection]
 
             # Change any strings into boolean or nonetypes if necesary
@@ -102,8 +77,6 @@ def evalSectionsIn(rxn, nodeInfo, N):
                     if ('None' in arg) or ('False' in arg) or ('True' in arg):
                         variables[j] = eval(variables[j])
                     if ('(' in arg) and (')' in arg):
-                        #print(arg)
-                        #print(N)
                         variables[j] = str(round_sig(eval(variables[j])))
             # begin searching for specific sections
 
@@ -114,7 +87,6 @@ def evalSectionsIn(rxn, nodeInfo, N):
                 oldPath = os.getcwd()
                 os.chdir(rxn)
                 for command in variables:
-                    #print('Executing command: ' + command, file=sys.stderr)
                     os.system(command)
                 os.chdir(oldPath)
             elif 'HEADER' in section:
@@ -180,10 +152,3 @@ def evalSectionsIn(rxn, nodeInfo, N):
 
                 create.vib(prevVibFile,inpFile)
     return inpFile
-
-#actions('../R00/','actions.txt',[7])
-
-
-
-
-

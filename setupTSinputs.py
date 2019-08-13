@@ -47,17 +47,14 @@ def header(prevInpFile, newInputFile, runtyp, *parameters, opttol="0.0001", nste
         rxnInfo = inpFile.readline()
 
         # Write commented header information and save runtyp-specific lines
-        # Hessian
         if runtyp == 'HESSIAN':
             newInputFile.write( "! Hessian calculation for transition state\n!\n")
             specLines = " $GUESS  GUESS=MOREAD $END\n"
             if contrlParams["DFTTYP"] == "DFTTYP=wB97X-D ":
                 specLines += " $FORCE  METHOD=SEMINUM $END\n"
-        # SadPoint
         elif runtyp == 'SADPOINT':
             newInputFile.write( "! Saddle point optimization for transition state\n!\n")
             specLines = " $GUESS  GUESS=MOREAD $END\n $STATPT OPTTOL=" + opttol + " NSTEP=" + nstep + " HESS=READ $END\n"
-        # IRC
         elif "IRC" in runtyp:
             if "backward" in runtyp:
                 direction = "backward"
@@ -68,11 +65,10 @@ def header(prevInpFile, newInputFile, runtyp, *parameters, opttol="0.0001", nste
             runtyp="IRC"
             newInputFile.write("! Intrinsic reaction coordinate (" + direction + ") run from transition state\n!\n")
             specLines = " $STATPT OPTTOL=" + opttol + " NSTEP=" + nstep + " HESS=READ $END\n $IRC    NPOINT=" + npoint + " SADDLE=.TRUE. STRIDE=0.1 FORWRD=." + forwrd + ". $END\n"
-            # Note that the $GUESS group is omitted for IRC runs because it is
+            # NOTE that the $GUESS group is omitted for IRC runs because it is
             # not needed for restart (i.e. abnormal) runs. It is included as a
             # parameter for the initial IRC_forward and IRC_backward runs in
             # actions.txt, however.
-        # Optimization
         elif "OPT" in runtyp:
             if "LHS" in runtyp:
                 side = "Left Hand Side"
@@ -270,7 +266,7 @@ def vec(prevVecDatFile, newInputFile, restart):
             # Find step which corresponds to minimum energy and move to that step
             readOptMinEnergyStep(datFile)
         elif ("SadPoint" in prevFilename and restart == True) or "Hess" in prevFilename:
-            pass #continue
+            pass 
         else:
             raise ValueError('Incorrect file for reading $VEC group')
 
@@ -306,7 +302,7 @@ def grad(prevGradDatFile, newInputFile, restart=True):
             readOptMinEnergyStep(datFile)
         elif "SadPoint" in prevFilename and restart:
             # Take $GRAD group from input file
-            pass #continue
+            pass 
         else:
             raise ValueError("Only Opt and SadPoint restarts for getPrevGrad()")
 
@@ -488,26 +484,3 @@ def readToString(fileObject, targetString):
         elif line == '':
             raise EOFError
     return
-
-
-######## EXAMPLES ##########
-
-# General notes: An IRC restart (status=4) does not require a $VEC but does require a $HESS. Starting an Opt from IRC will use the geom and $VEC, which will be properly handled by these functions, but the IRC run will not put out a $GRAD.
-
-#with open('testInputSadPoint.inp','w') as newInputFile:
-#    dirPath = "/home/rcf-proj2/ddd2/ZhangThynellTS/R8/"
-#    prevRunType = "SadPoint"  # Pulling data from a SadPoint .dat file
-#    restart = False       # Next run is not a restart
-#    getPrevGeom(dirPath+"SadPoint/TS_SadPoint.dat", newInputFile, prevRunType, restart)
-#    getPrevVec(dirPath+"SadPoint/TS_SadPoint.dat", newInputFile, prevRunType, restart)
-#
-#with open('testInputIRC.inp','w') as newInputFile:
-#    dirPath = "/home/rcf-proj2/ddd2/ZhangThynellTS/R8/"
-#    prevRunType = "IRC"  # Pulling data from a IRC .dat file
-#    restart = True   # Next run is a restart
-#    # Note: the "TS_SadPoint.dat" name below was my mistake in naming the file when I ran it originally
-#    getPrevGeom(dirPath+"IRC_forward/TS_SadPoint.dat", newInputFile, prevRunType, restart)
-#    getPrevVec(dirPath+"IRC_forward/TS_SadPoint.dat", newInputFile, prevRunType, restart)
-#    getPrevHess(dirPath+"Hess_final/TS_Hess.dat", newInputFile)
-#    getPrevIRC(dirPath+"IRC_forward/TS_SadPoint.dat", newInputFile)
-

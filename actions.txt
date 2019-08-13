@@ -565,18 +565,12 @@ PrevVibFile=Hess_RHS/abnormally_1/TS_Hess.inp
 $END
 ----------------------------------------------------------------------------------------
 $NODE=33
-DESCRIPTION: "Node 31: Hess LHS ran normally "
-
-SECTION: CMD
-exit 0
+DESCRIPTION: "Node 33: Hess LHS ran normally "
 
 $END
 ----------------------------------------------------------------------------------------
 $NODE=34
-DESCRIPTION: "Node 32: Hess RHS ran normally "
-
-SECTION: CMD
-exit 0
+DESCRIPTION: "Node 34: Hess RHS ran normally "
 
 $END
 ----------------------------------------------------------------------------------------

@@ -71,6 +71,7 @@ def evalNode(rxnPath,node):
     if len(search) > 3:
         for cond in search[3:]:
 #           print(cond, file=debug)
+
             try:
                 if eval(cond):
                     nodeExists = True
@@ -79,6 +80,9 @@ def evalNode(rxnPath,node):
             except:
 #               print('WARNING: Exception was found for conditions: ' + cond, file=debug)
                 nodeExists = False
+        print(cond)
+        print('Above condition is deemed:')
+        print(nodeExists)
 #   print('Search Target: ' + searchTarget + ' is ' + str(nodeExists), file=debug)
 #   debug.close()
 
@@ -120,7 +124,8 @@ def findStatus(rxn):
         if not variables.adjacency[value]:
             #print("appending status value: " + str(value), file=sys.stderr)
             status.append(value)
-
+    print('Nodes found:')
+    print(status)
 #   debug.close()
 
     # If leaf nodes DNE, raise error

@@ -1,0 +1,479 @@
+#!/bin/tcsh
+#
+#  last update = 8 Aug 2019
+#  implemented for Worklow scheme within USC HPCC cluster
+#  modified from script included in GAMESS distribution, requiring
+#  an additional input from the command line (hostfile)
+#
+#  This is a C-shell script to execute GAMESS, by typing
+#       rungms JOB VERNO NCPUS >& JOB.log &
+#  JOB    is the name of the 'JOB.inp' file to be executed,
+#  VERNO  is the number of the executable you chose at 'lked' time,
+#  NCPUS  is the number of processors to be used, or the name of
+#         a host list file.
+#
+#  Unfortunately execution is harder to standardize than compiling,
+#  so you have to do a bit more than name your machine type here:
+#
+#    a) choose the target for execution from the following list:
+#           sockets, mpi, ga, altix, cray-xt, ibm64-sp, sgi64
+#       IBM Blue Gene uses separate execution files: ~/gamess/machines/ibm-bg
+#
+#       choose "sockets" if your compile time target was any of these:
+#             axp64, hpux32, hpux64, ibm32, ibm64, linux32,
+#             mac32, mac64, sgi32, sun32, sun64
+#       as all of these systems use TCP/IP sockets.  Do not name your
+#       specific compile time target, instead choose "sockets".
+#
+#       If your target was 'linux64', you may chose "sockets" or "mpi",
+#       according to how you chose to compile.  The MPI example below
+#       should be carefully matched against info found in 'readme.ddi'!
+#
+#       Choose 'ga' if and only if you did a 'linux64' build linked
+#       to the LIBCCHEM software for CPU/GPU computations.
+#
+#           Search on the words typed in capital letters just below
+#           in order to find the right place to choose each one:
+#    b) choose a directory SCR where large temporary files can reside.
+#       This should be the fastest possible disk access, very spacious,
+#       and almost certainly a local disk.
+#       Translation: do not put these files on a slow network file system!
+#    c) choose a directory USERSCR on the file server where small ASCII
+#       supplementary output files should be directed.
+#       Translation: it is OK to put this on a network file system!
+#    d) name the location GMSPATH of your GAMESS binary.
+#    e) change the the VERNO default to the version number you chose when
+#       running "lked" as the VERNO default, and maybe NCPUS' default.
+#    f) make sure that the ERICFMT file name and MCPPATH pathname point to
+#       your file server's GAMESS tree, so that all runs can find them.
+#       Again, a network file system is quite OK for these two.
+#    g) customize the execution section for your target below,
+#       each has its own list of further requirements.
+#    h) it is unwise to have every user take a copy of this script, as you
+#       can *NEVER* update all the copies later on.  Instead, it is better
+#       to ask other users to create an alias to point to a common script,
+#       such as this in their C-shell .login file,
+#             alias gms '/u1/mike/gamess/rungms'
+#    i) it is entirely possible to make 'rungms' run in a batch queue,
+#       be it PBS, DQS, et cetera.  This is so installation dependent
+#       that we leave it to up to you, although we give examples.
+#       See ~/gamess/tools, where there are two examples of "front-end"
+#       scripts which can use this file as the "back-end" actual job.
+#       We use the front-end "gms" on local Infiniband clusters using
+#       both Sun Grid Engine (SGE), and Portable Batch System (PBS).
+#       See also a very old LoadLeveler "ll-gms" for some IBM systems.
+#
+set TARGET=mpi
+set GMSPATH=/home/rcf-proj2/ddd2/ddepew/gamess/src
+#
+set JOB=$1      # name of the input file xxx.inp, give only the xxx part
+set VERNO=$2    # revision number of the executable created by 'lked' step
+set NCPUS=$3    # number of compute processes to be run
+#
+# provide defaults if last two arguments are not given to this script
+if (null$VERNO == null) set VERNO=00
+if (null$NCPUS == null) set NCPUS=1
+#
+setenv HOSTFILE $5
+#
+#  ---- the top third of the script is input and other file assignments ----
+#
+echo "----- GAMESS execution script 'rungms' -----"
+set master=`head -n 1 $HOSTFILE`
+echo This job is running on host $master
+echo under operating system `uname` at `date`
+#
+#      Batch scheduler, if any, should provide its own working directory,
+#      on every assigned node (if not, modify scheduler's prolog script).
+#      The SCHED variable, and scheduler assigned work space, is used
+#      below only in the MPI section.  See that part for more info.
+set SCHED=SLURM
+set SCR=$SCRATCHDIR/$master
+set USERSCR=$SLURM_SUBMIT_DIR/`dirname $JOB`
+if ( ! -e $SCR )    mkdir $SCR
+mv $HOSTFILE $SCR/$HOSTFILE
+setenv HOSTFILE $SCR/$HOSTFILE
+#
+echo "Available scratch disk space (Kbyte units) at beginning of the job is"
+df -k $SCR
+echo "GAMESS temporary binary files will be written to $SCR"
+echo "GAMESS supplementary output files will be written to $USERSCR"
+
+#        this added as experiment, February 2007, as 8 MBytes
+#        increased to 32 MB in October 2013 for the VB2000 code.
+#        its intent is to detect large arrays allocated off the stack
+limit stacksize 32768
+
+#  Grab a copy of the input file.
+#  In the case of examNN jobs, file is in tests/standard subdirectory.
+#  In the case of exam-vbNN jobs, file is in vb2000's tests subdirectory.
+if ($JOB:r.inp == $JOB) set JOB=$JOB:r      # strip off possible .inp
+echo "Copying input file $JOB.inp to your run's scratch directory..."
+if (-e $JOB.inp) then
+   set JOBPATH=$JOB
+   set JOB=`basename $JOB`
+   set echo
+   cp  $JOBPATH.inp  $SCR/$JOB.F05
+   unset echo
+else
+   echo "Input file $JOB.inp does not exist."
+   echo "This job expected the input file to be in directory `pwd`"
+   echo "Please fix your file name problem, and resubmit."
+   exit 4
+endif
+
+#    define many environment variables setting up file names.
+#    anything can be overridden by a user's own choice, read 2nd.
+#
+source $GMSPATH/gms-files.csh
+#
+#        choose remote shell execution program.
+#    Parallel run do initial launch of GAMESS on remote nodes by the
+#    following program.  Note that the authentication keys for ssh
+#    must have been set up correctly.
+#    If you wish, choose 'rsh/rcp' using .rhosts authentication instead.
+setenv DDI_RSH ssh
+setenv DDI_RCP scp
+
+#    data left over from a previous run might be precious, stop if found.
+if (  (-e $CASINO) || (-e $CIMDMN)  || (-e $CIMFILE) || (-e $COSDATA) \
+   || (-e $COSPOT) || (-e $GAMMA)   || (-e $MAKEFP)  \
+   || (-e $MDDIP)  || (-e $OPTHES1) || (-e $OPTHES2) || (-e $PUNCH)   \
+   || (-e $QMWAVE) || (-e $RESTART) || (-e $TRAJECT) ) then
+   echo "Please save, rename, or erase these files from a previous run:"
+   echo "     $CASINO,"
+   echo "     $CIMDMN,"
+   echo "     $CIMFILE,"
+   echo "     $COSDATA,"
+   echo "     $COSPOT,"
+   echo "     $GAMMA,"
+   echo "     $MAKEFP,"
+   echo "     $MDDIP,"
+   echo "     $OPTHES1,"
+   echo "     $OPTHES2,"
+   echo "     $PUNCH,"
+   echo "     $QMWAVE,"
+   echo "     $RESTART, and/or"
+   echo "     $TRAJECT,"
+   echo "and then resubmit this computation."
+   exit 4
+endif
+
+#  ---- the middle third of the script is to execute GAMESS ----
+#
+#  we show execution sections that should work for
+#        sockets, mpi, altix, cray-xt, ibm64-sp, sgi64
+#  and then two others
+#        cray-x1, necsx
+#  which are not mentioned at the top of this file, as they are quite stale.
+#
+#   Most workstations run DDI over TCP/IP sockets, and therefore execute
+#   according to the following clause.  The installer must
+#      a) Set the path to point to the DDIKICK and GAMESS executables.
+#      b) Build the HOSTLIST variable as a word separated string, i.e. ()'s.
+#         There should be one host name for every compute process that is
+#         to be run.  DDIKICK will automatically generate a set of data
+#         server processes (if required) on the same hosts.
+#   An extended explanation of the arguments to ddikick.x can be found
+#   in the file gamess/ddi/readme.ddi, if you have any trouble executing.
+#
+
+#                     - a typical MPI example -
+#
+#         This section is customized to two possible MPI libraries:
+#             Intel MPI or MVAPICH2 (choose below).
+#             We do not know tunings to use openMPI correctly!!!
+#         This section is customized to two possible batch schedulers:
+#             Sun Grid Engine (SGE), or Portable Batch System (PBS)
+#
+#         See ~/gamess/tools/gms, which is a front-end script to submit
+#         this file 'rungms' as a back-end script, to either scheduler.
+#
+#                   if you are using some other MPI:
+#         See ~/gamess/ddi/readme.ddi for information about launching
+#         processes using other MPI libraries (each may be different).
+#         Again: we do not know how to run openMPI effectively.
+#
+#                   if you are using some other batch scheduler:
+#         Illustrating other batch scheduler's way's of providing the
+#         hostname list is considered beyond the scope of this script.
+#         Suffice it to say that
+#             a) you will be given hostnames at run time
+#             b) a typical way is a disk file, named by an environment
+#                variable, containing the names in some format.
+#             c) another typical way is an blank separated list in some
+#                environment variable.
+#         Either way, whatever the batch scheduler gives you must be
+#         sliced-and-diced into the format required by your MPI kickoff.
+#
+if ($TARGET == mpi) then
+   #
+   #      Besides the usual three arguments to 'rungms' (see top),
+   #      we'll pass in a "processers per node" value, that is,
+   #      all nodes are presumed to have equal numbers of cores.
+   #
+   set PPN=$4
+   #
+   #      Allow for compute process and data servers (one pair per core)
+   #      note that NCPUS = #cores, and NPROCS = #MPI processes
+   #
+   @ NPROCS = $NCPUS + $NCPUS
+   #
+   #      User customization required here:
+   #       1. specify your MPI choice: impi/mpich/mpich2/mvapich2/openmpi
+   #          Note that openMPI will probably run at only half the speed
+   #          of the other MPI choices, so openmpi should not be used!
+   #       2. specify your MPI library's top level path just below,
+   #          this will have directories like include/lib/bin below it.
+   #       3. a bit lower, perhaps specify your ifort path information.
+   #
+   set DDI_MPI_CHOICE=impi
+   #
+   #        ISU's various clusters have various iMPI paths, in this order:
+   #              dynamo/chemphys2011/exalted/bolt/CyEnce/CJ
+   if ($DDI_MPI_CHOICE == impi) then
+      set DDI_MPI_ROOT=/usr/usc/intel/default/impi/2018.1.163/intel64
+   endif
+   #
+   #        pre-pend our MPI choice to the library and execution paths.
+   switch ($DDI_MPI_CHOICE)
+      case impi:
+      case openmpi:
+         setenv LD_LIBRARY_PATH $DDI_MPI_ROOT/lib:$LD_LIBRARY_PATH
+         set path=($DDI_MPI_ROOT/bin $path)
+         rehash
+         breaksw
+      default:
+         breaksw
+   endsw
+   #
+   #       you probably don't need to modify the kickoff style (see below).
+   #
+   if ($DDI_MPI_CHOICE == impi)     set MPI_KICKOFF_STYLE=hydra
+   #
+   #  Kickoff procedure #2 is little faster, easier to use, and involves
+   #  only one command (mpiexec.hydra).  It is called "hydra" here.
+   #
+   #  A. build HOSTFILE,
+   #     This file is explicitly used only by "3steps" initiation,
+   #     but it is always used below during file cleaning,
+   #     and while creating the PROCFILE at step B,
+   #     so we always make it.
+   #
+   #           uncomment next lines if you need to debug host configuration.
+   echo '-----debug----'
+   echo HOSTFILE $HOSTFILE contains
+   cat $HOSTFILE
+   echo '--------------'
+   #
+   #  B. the next file forces explicit "which process on what node" rules.
+   #     The contents depend on the kickoff style.  This file is how
+   #     we tell MPI to double-book the cores with two processes,
+   #     thus accounting for both compute processes and data servers.
+   #
+   setenv PROCFILE $SCR/$JOB.processes.mpd
+   if (-e $PROCFILE) rm $PROCFILE
+   touch $PROCFILE
+
+   # case hydra:
+   set NNODES=`wc -l $HOSTFILE`
+   set NNODES=$NNODES[1]
+   if ($NNODES == 1) then
+             # when all processes are inside a single node, it is simple!
+             # all MPI processes, whether compute processes or data servers,
+             # are just in this node.   (note: NPROCS = 2*NCPUS!)
+      @ PPN2 = $PPN + $PPN
+      echo $PPN2
+      echo "`hostname`:$NPROCS" > $PROCFILE
+   else
+             # For more than one node, we want PPN compute processes on
+             # each node, and of course, PPN data servers on each.
+             # Hence, PPN2 is doubled up.
+             # Front end script 'gms' is responsible to ensure that NCPUS
+             # is a multiple of PPN, and that PPN is less than or equals
+             # the actual number of cores in the node.
+      @ PPN2 = $PPN + $PPN
+      @ n=1
+      while ($n <= $NNODES)
+         set host=`sed -n -e "$n p" $HOSTFILE`
+         set host=$host[1]
+         echo "${host}:$PPN2" >> $PROCFILE
+         echo "${host}:$PPN2"
+         @ n++
+      end
+   endif
+   #           uncomment next lines if you need to debug host configuration.
+   echo '-----debug----'
+   echo PROCFILE $PROCFILE contains
+   cat $PROCFILE
+   echo '--------------'
+   #
+   #     ==== values that influence the MPI operation ====
+   #
+   #     tunings below are specific to Intel MPI 3.2 and/or 4.0:
+   #        a very important option avoids polling for incoming messages
+   #           which allows us to compile DDI in pure "mpi" mode,
+   #           and get sleeping data servers if the run is SCF level.
+   #        trial and error showed process pinning slows down GAMESS runs,
+   #        set debug option to 5 to see messages while kicking off,
+   #        set debug option to 200 to see even more messages than that,
+   #        set statistics option to 1 or 2 to collect messaging info,
+   #        iMPI 4.0 on up defaults fabric to shm,dapl: dapl only is faster.
+   #
+   if ($DDI_MPI_CHOICE == impi) then
+      set echo
+      setenv I_MPI_WAIT_MODE enable
+      setenv I_MPI_PIN disable
+      setenv I_MPI_DEBUG 0
+      setenv I_MPI_STATS 0
+      #              next two select highest speed mode of an Infiniband
+      #--setenv I_MPI_FABRICS dapl
+      setenv I_MPI_FABRICS ofa
+      setenv I_MPI_DAT_LIBRARY libdat2.so
+      # Force use of "shared memory copy" large message transfer mechanism
+      # The "direct" mechanism was introduced and made default for IPS 2017,
+      # and makes GAMESS hang when DD_GSum() is called. See IPS 2017 release notes
+      # for more details.
+      setenv I_MPI_SHM_LMT shm
+      #              next two select TCP/IP, a slower way to use Infiniband.
+      #              The device could be eth0 if IP over IB is not enabled.
+      #--setenv I_MPI_FABRICS tcp
+      #--setenv I_MPI_TCP_NETMASK ib0
+      #      in case someone wants to try the "tag matching interface",
+      #      an option which unfortunately ignores the WAIT_MODE in 4.0.2!
+      #--setenv I_MPI_FABRICS tmi
+      #--setenv I_MPI_TMI_LIBRARY libtmi.so
+      #--setenv I_MPI_TMI_PROVIDER psm
+      #--setenv TMI_CONFIG $DDI_MPI_ROOT/etc/tmi.conf
+      unset echo
+   endif
+
+   #
+   #   =========== runtime path/library setup is now finished! ===========
+   #     any issues with paths and libraries can be debugged just below:
+   #
+   #--echo '-----debug----'
+   #--echo the execution path is
+   #--echo $path
+   #--echo " "
+   #--echo the library path is
+   #--echo $LD_LIBRARY_PATH
+   #--echo " "
+   #--echo The dynamically linked libraries for this binary are
+   #--ldd $GMSPATH/gamess.$VERNO.x
+   #--echo '--------------'
+   #
+   #
+   #  Now, at last, we can actually kick-off the MPI processes...
+   #
+   echo "MPI kickoff will run GAMESS on $NCPUS cores in $NNODES nodes."
+   echo "The binary to be executed is $GMSPATH/gamess.$VERNO.x"
+   echo "MPI will run $NCPUS compute processes and $NCPUS data servers,"
+   echo "    placing $PPN of each process type onto each node."
+   echo "The scratch disk space on each node is $SCR, with free space"
+   df -k $SCR
+   #
+   chdir $SCR
+   #
+   # case hydra:
+      if ($DDI_MPI_CHOICE == impi) then
+         set echo
+         setenv I_MPI_HYDRA_ENV all
+         setenv I_MPI_PERHOST $PPN2
+         unset echo
+      endif
+      set echo
+      mpiexec.hydra -f $PROCFILE -n $NPROCS \
+            $GMSPATH/gamess.$VERNO.x < /dev/null
+      unset echo
+   #    keep HOSTFILE, as it is passed to the file erasing step below
+   rm -f $PROCFILE
+   #
+endif
+#      ------ end of the MPI execution section -------
+
+
+#
+#  ---- the bottom third of the script is to clean up all disk files ----
+#  It is quite useful to display to users how big the disk files got to be.
+#
+echo ----- accounting info -----
+#
+#
+#   Clean up the master's scratch directory.
+#
+echo Files used on the master node $master were:
+ls -lF $SCR/$JOB.*
+rm -f  $SCR/$JOB.F*
+#
+#   Clean/Rescue any files created by the VB2000 plug-in
+if (-e $SCR/$JOB.V84)        mv $SCR/$JOB.V84     $USERSCR
+if (-e $SCR/$JOB.V80)        rm -f $SCR/$JOB.V*
+if (-e $SCR/$JOB.TEMP02)     rm -f $SCR/$JOB.TEMP*
+if (-e $SCR/$JOB.orb)        mv $SCR/$JOB.orb     $USERSCR
+if (-e $SCR/$JOB.vec)        mv $SCR/$JOB.vec     $USERSCR
+if (-e $SCR/$JOB.mol)        mv $SCR/$JOB.mol     $USERSCR
+if (-e $SCR/$JOB.molf)       mv $SCR/$JOB.molf    $USERSCR
+if (-e $SCR/$JOB.mkl)        mv $SCR/$JOB.mkl     $USERSCR
+if (-e $SCR/$JOB.xyz)        mv $SCR/$JOB.xyz     $USERSCR
+ls $SCR/${JOB}-*.cube > $SCR/${JOB}.lis
+if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.cube $USERSCR
+rm -f $SCR/${JOB}.lis
+ls $SCR/${JOB}-*.grd > $SCR/${JOB}.lis
+if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.grd $USERSCR
+rm -f $SCR/${JOB}.lis
+ls $SCR/${JOB}-*.csv > $SCR/${JOB}.lis
+if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.csv $USERSCR
+rm -f $SCR/${JOB}.lis
+#
+#   Clean up scratch directory of remote nodes.
+#
+#   This may not be necessary, e.g. on a T3E where all files are in the
+#   same directory, and just got cleaned out by the previous 'rm'.  Many
+#   batch queue managers provide cleaning out of scratch directories.
+#   It still may be interesting to the user to see the sizes of files.
+#
+#   The 'lasthost' business prevents multiple cleanup tries on SMP nodes.
+#
+#
+#    This particular example is for the combination iMPI, w/SGE or PBS.
+#    We have inherited a file of unique node names from above.
+#    There is an option to rescue the output files from group DDI runs,
+#    such as FMO, in case you need to see the other group's outputs.
+if ($TARGET == mpi) then
+   set nnodes=`wc -l $HOSTFILE`
+   set nnodes=$nnodes[1]
+   @ n=1
+   set master=`hostname`
+           # burn off the .local suffix in our cluster's hostname
+   set master=$master:r
+   while ($n <= $nnodes)
+      set host=`sed -n -e "$n p" $HOSTFILE`
+           # in case of openMPI, unwanted stuff may follow the hostname
+      set host=$host[1]
+      if ($host != $master) then
+         echo Files used on node $host were:
+         ssh $host -l $USER "ls -l $SCR/$JOB.*"
+         ssh $host -l $USER "rm -f $SCR/$JOB.*"
+      endif
+      @ n++
+   end
+#          clean off the last file on the master's scratch disk.
+   rm -f $HOSTFILE
+# ADDED BY DANIEL DEPEW move supplementary data files to input file directory
+#  if (-e $USERSCR/$JOB.efp)   mv $USERSCR/$JOB.efp   $USERSCR/$JOBPATH.efp
+#  if (-e $USERSCR/$JOB.gamma) mv $USERSCR/$JOB.gamma $USERSCR/$JOBPATH.gamma
+#  if (-e $USERSCR/$JOB.trj)   mv $USERSCR/$JOB.trj   $USERSCR/$JOBPATH.trj
+#  if (-e $USERSCR/$JOB.rst)   mv $USERSCR/$JOB.rst   $USERSCR/$JOBPATH.rst
+#  if (-e $USERSCR/$JOB.dat)   mv $USERSCR/$JOB.dat   $USERSCR/$JOBPATH.dat
+#  #
+   if ($?I_MPI_STATS) then
+      if ($I_MPI_STATS > 0) mv $SCR/stats.txt ~/$JOB.$NCPUS.stats
+   endif
+endif
+#
+#  and this is the end
+#
+date
+time
+exit

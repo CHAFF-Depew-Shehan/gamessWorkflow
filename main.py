@@ -1,12 +1,12 @@
 import status
-import actions as act
+from setupRun import processNodes
 from hosts import getHosts
 import sys
 
 # CHANGELOG 07/23/19
-#   -- due to modification in actions.py, allowed for newInputFile variable to
+#   -- due to modification in setupRun.py, allowed for newInputFile variable to
 #       be a list of strings; then each new input file is printed in a
-#       rungamessline for execution in case of multiple action nodes
+#       rungamessline for execution in case of multiple status nodes
 # CHANGELOG 07/29/19
 #   -- removed side from inputs and argument to findStatus()
 # CHANGELOG 08/08/19
@@ -15,9 +15,9 @@ import sys
 #       exits
 #   -- the getHosts() function was added as implemented in hosts.py, accepting
 #       the number of subprocesses which must be run in parallel, inferred
-#       from the length of the list returned by the "actions()" function
+#       from the length of the list returned by the "processNodes()" function
 #   -- incorporated error handling in case no input files are returned from
-#       actions() function, raising a ValueError
+#       processNodes() function, raising a ValueError
 #   -- changed the output of the main function to print the stripped input
 #       file names; note that these include relative paths but the file name
 #       does not have the ".inp" extension
@@ -30,7 +30,7 @@ def main(rxn):
         print('COMPLETED')
         return
 
-    newInputFile = act.actions(rxn,'/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow/actions.txt',rxnStatus)
+    newInputFile = processNodes(rxn,'/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow/nodes.txt',rxnStatus)
 
     numSubprocesses = len(newInputFile)
     if numSubprocesses == 0:

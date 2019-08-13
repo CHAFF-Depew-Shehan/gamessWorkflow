@@ -69,7 +69,6 @@ def dfs(graph, start, rxnPath, visited=None):
         visited = set()
     if evalNode(rxnPath,start):
         visited.add(start)
-
         for next in graph[start] - visited:
             dfs(graph, next, rxnPath, visited)
     return visited

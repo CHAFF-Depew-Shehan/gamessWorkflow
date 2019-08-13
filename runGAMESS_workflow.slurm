@@ -35,9 +35,7 @@ I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=enable
 echo "After semaphore removal:"
 ipcs -s
 
-
-# run the program on the linux cluster
-# note that the sbatch command must be submitted from the reaction directory
+# NOTE: The sbatch command must be submitted from the reaction directory
 while [ ! -s workflow.err ]; do 
 INPUTFILES=`python3 $WORKFLOW_PATH/main.py "./" 2>workflow.err`
 if [ -z "$INPUTFILES" ]; then echo NO INPUT FILES; continue; fi

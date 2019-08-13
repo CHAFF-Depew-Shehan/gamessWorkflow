@@ -11,8 +11,8 @@
 #SBATCH --mail-user=ddepew@usc.edu
 #SBATCH --mail-type=ALL
 
-export GMS_PATH=/home/rcf-proj2/ddd2/ddepew/scripts/gamessWorkflow
-export WORKFLOW_PATH=/home/rcf-proj2/ddd2/ddepew/scripts/gamessWorkflow
+export GMS_PATH=/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow
+export WORKFLOW_PATH=/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow
 source /usr/usc/intel/17.2/setup.sh
 
 echo "Starting" $SLURM_JOB_ID `date`

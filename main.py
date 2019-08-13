@@ -1,4 +1,4 @@
-import statusUpdateFunc as search
+import status
 import actions as act
 from hosts import getHosts
 import sys
@@ -23,14 +23,14 @@ import sys
 #       does not have the ".inp" extension
 
 def main(rxn):
-    status = search.findStatus(rxn)
+    rxnStatus = status.findStatus(rxn)
     # NOTE: This must be kept current as new nodes are added and the "final 2"
     # nodes change from 33 and 34
-    if 33 in status and 34 in status:
+    if 33 in rxnStatus and 34 in rxnStatus:
         print('COMPLETED')
         return
 
-    newInputFile = act.actions(rxn,'/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow/actions.txt',status)
+    newInputFile = act.actions(rxn,'/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow/actions.txt',rxnStatus)
 
     numSubprocesses = len(newInputFile)
     if numSubprocesses == 0:

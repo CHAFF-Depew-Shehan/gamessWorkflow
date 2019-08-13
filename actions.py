@@ -1,4 +1,4 @@
-import setupTSinputs as create
+import createInputFile as create
 import os
 import sys
 from math import log10, floor

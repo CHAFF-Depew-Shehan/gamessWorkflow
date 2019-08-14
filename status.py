@@ -14,8 +14,8 @@ adjacency = {0:set([1, 2]), 1:set([3,4,5]), 2:set([]), 3:set([]), 4:set([6,7,8])
 search = {0: ['fldr','SadPoint',''],
         1:['word','SUCCESSFUL','SadPoint/TS_SadPoint.dat'],
         2:['word','FAILURE TO LOCATE STATIONARY POINT', 'SadPoint/TS_SadPoint.log'],
-        3:['fldr','Hess_final','not Path(path).is_file()'],
-        4:['fldr','Hess_final',''],
+        3:['fldr','Hess_final', '','not Path(path+"/TS_Hess.inp").is_file()'],
+        4:['fldr','Hess_final', '','Path(path+"/TS_Hess.log").is_file()'],
         5:['fldr','Hess_final', '', 'not Path(path).is_dir()'],
         6:['word','1 IMAGINARY FREQUENCY','Hess_final/TS_Hess.log'],
         7:['word','IMAGINARY FREQUENCY','Hess_final/TS_Hess.log','int(line.strip()[0])>=2'],
@@ -34,10 +34,10 @@ search = {0: ['fldr','SadPoint',''],
         20:['fldr','Opt_RHS',''],
         21:['fldr','Opt_LHS',''],
         22:['fldr','Opt_LHS','','not Path(path).is_dir() '],
-        23:['word','SUCCESSFUL','Opt_LHS/TS_OptLHS.dat','Path("/Opt_LHS/README").is_file()'],
-        24:['word','SUCCESSFUL','Opt_RHS/TS_OptRHS.dat','Path("/Opt_RHS/README").is_file()'],
-        25:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_LHS/TS_OptLHS.log','not Path("/Opt_LHS/README").is_file()'],
-        26:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_RHS/TS_OptRHS.log','not Path("/Opt_RHS/README").is_file()'],
+        23:['word','SUCCESSFUL','Opt_LHS/TS_OptLHS.dat','nodeExists or Path("/Opt_LHS/README").is_file()'],
+        24:['word','SUCCESSFUL','Opt_RHS/TS_OptRHS.dat','nodeExists or Path("/Opt_RHS/README").is_file()'],
+        25:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_LHS/TS_OptLHS.log'],
+        26:['word','FAILURE TO LOCATE STATIONARY POINT','Opt_RHS/TS_OptRHS.log'],
         27:['fldr','Hess_RHS','','not Path(path).is_dir()'],
         28:['fldr','Hess_RHS',''],
         29:['fldr','Hess_LHS',''],
@@ -74,18 +74,15 @@ def dfs(graph, start, rxnPath, visited=None):
     return visited
 
 def evalNode(rxnPath,node):
-    # This function works closely with the 'search' dictionary in variables.py
-    search = variables.search[node]
-    searchType = search[0]
-    searchTarget = search[1]
-    searchFolder = search[2]
+    # This function works closely with the 'search' dictionary
+    searchType = search[node][0]
+    searchTarget = search[node][1]
+    searchFolder = search[node][2]
     if searchType is 'fldr':
         path = rxnPath+searchFolder+searchTarget
         try:
             matches = glob.glob(path)
             nodeExists = (len(matches)>=1)
-            if '*' in searchTarget:
-                variables.SP_HF_count[searchFolder] = len(matches)
         except:
             nodeExists = False
     elif searchType is 'word':
@@ -94,8 +91,8 @@ def evalNode(rxnPath,node):
         nodeExists = (len(line)>=1)
 
     # Any final conditions that can still change the status
-    if len(search) > 3:
-        for cond in search[3:]:
+    if len(search[node]) > 3:
+        for cond in search[node][3:]:
             try:
                 if eval(cond):
                     nodeExists = True
@@ -103,7 +100,7 @@ def evalNode(rxnPath,node):
                     nodeExists = False
             except:
                 print('WARNING: Exception was found for conditions: ' + cond, file=sys.stderr)
-                raise 
+                raise
     return nodeExists
 
 def findStatus(rxn):
@@ -117,9 +114,9 @@ def findStatus(rxn):
 
     status = []
 
-    paths = dfs(variables.adjacency,0,rxn)
+    paths = dfs(adjacency,0,rxn)
     for value in paths:
-        if not variables.adjacency[value]:
+        if not adjacency[value]:
             status.append(value)
 
     # If leaf nodes DNE, raise error

@@ -14,7 +14,7 @@ adjacency = {0:set([1, 2]), 1:set([3,4,5]), 2:set([]), 3:set([]), 4:set([6,7,8])
 search = {0: ['fldr','SadPoint',''],
         1:['word','SUCCESSFUL','SadPoint/TS_SadPoint.dat'],
         2:['word','FAILURE TO LOCATE STATIONARY POINT', 'SadPoint/TS_SadPoint.log'],
-        3:['fldr','Hess_final', '','not Path(path+"/TS_Hess.inp").is_file()'],
+        3:['fldr','Hess_final', '','nodeExists and (not Path(path+"/TS_Hess.inp").is_file())'],
         4:['fldr','Hess_final', '','Path(path+"/TS_Hess.log").is_file()'],
         5:['fldr','Hess_final', '', 'not Path(path).is_dir()'],
         6:['word','1 IMAGINARY FREQUENCY','Hess_final/TS_Hess.log'],

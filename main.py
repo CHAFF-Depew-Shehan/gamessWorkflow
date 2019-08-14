@@ -30,7 +30,7 @@ def main(rxn):
         print('COMPLETED')
         return
 
-    newInputFile = processNodes(rxn,'/home/rcf-proj2/ddd2/ddepew/gamess/src/scripts/gamessWorkflow/nodes.txt',rxnStatus)
+    newInputFile = processNodes(rxn,'/home/rcf-40/smparmar/hpc/smparmar/GIT/gamessWorkflow/nodes.txt',rxnStatus)
 
     numSubprocesses = len(newInputFile)
     if numSubprocesses == 0:

@@ -6,4 +6,15 @@
 3. R35: mkdir: cannot create directory ~@~XOpt_RHS/incomplete_1~@~Y: File exists
 	FileNotFoundError: [Errno 2] No such file or directory: './Opt_RHS/incomplete_2/TS_OptRHS.dat'
 	SIMILAR CASES: R8, R32
-	- something might be wrong with how "_N" is read 
+	- something might be wrong with how "_N" is read
+--------------------------------------------------------------------------------------------------------
+08/26/2019
+4. M062XD R59 (LHS), R35 (RHS): With CONV=1d-7, there is still an imaginary frequency 
+    - could either add a new node for imaginary freq to decrease CONV or exit code and analyze manually
+5. M062XD R28_4, R28_6, R32_2: failed SadPoint 
+    - R28_4, R28_6 only ran through one NSERCH
+6. M062XD R28, R40, R53: failed Hess Init
+    - log file ran abnormally 
+    - R53 is positive definite after a second try ...
+7. M062XD R29, R35_2: failed workflow, Optimization was incomplete but "Failure to locate stationary point" line not found
+    - R35_2 Opt_LHS seemed to have completed but no results section could be found

@@ -74,8 +74,11 @@ def header(prevInpFile, newInputFile, runtyp, *parameters, opttol="0.0001", nste
                 side = "Left Hand Side"
             elif "RHS" in runtyp:
                 side = "Right Hand Side"
+            else:
+                side = False
             runtyp="OPTIMIZE"
-            newInputFile.write( "! Optimization of Reaction " + side + "\n!\n")
+            if side:
+                newInputFile.write( "! Optimization of Reaction " + side + "\n!\n")
             specLines = " $GUESS  GUESS=MOREAD $END\n $STATPT OPTTOL=" + opttol + " NSTEP=" + nstep + " $END\n"
 
         # Write rest of header information
@@ -266,7 +269,7 @@ def vec(prevVecDatFile, newInputFile, restart):
             # Find step which corresponds to minimum energy and move to that step
             readOptMinEnergyStep(datFile)
         elif ("SadPoint" in prevFilename and restart == True) or "Hess" in prevFilename:
-            pass 
+            pass
         else:
             raise ValueError('Incorrect file for reading $VEC group')
 
@@ -302,7 +305,7 @@ def grad(prevGradDatFile, newInputFile, restart=True):
             readOptMinEnergyStep(datFile)
         elif "SadPoint" in prevFilename and restart:
             # Take $GRAD group from input file
-            pass 
+            pass
         else:
             raise ValueError("Only Opt and SadPoint restarts for getPrevGrad()")
 

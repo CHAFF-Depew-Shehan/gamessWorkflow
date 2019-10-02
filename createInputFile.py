@@ -1,6 +1,6 @@
 import sys
 
-def header(prevInpFile, newInputFile, runtyp, *parameters, opttol="0.0001", nstep="20", npoint="15",maxit="60"):
+def header(prevInpFile, newInputFile, runtyp, *parameters, opttol=None, nstep=None, npoint=None,maxit=None):
     # The prevInpFile is a string indicating the file name and path
     # the newInputFile is a file object that has been opened previously
     # for writing
